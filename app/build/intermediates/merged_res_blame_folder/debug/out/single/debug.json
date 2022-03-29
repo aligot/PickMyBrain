@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_modify_word.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_modify_word.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_itemfetch.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_itemfetch.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/menu_example_menu.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/menu/example_menu.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_item_word.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/item_word.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_revision.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_revision.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_add_language.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_language.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_item.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/item.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_add_word.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_word.xml"
+    }
+]

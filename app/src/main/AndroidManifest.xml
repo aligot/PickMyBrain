@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.listviewinlistview" >
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" >
+
+        <activity
+            android:name=".ModifyWord"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.ModifyWord" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".add_word"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.add_word" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".add_language"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.add_language" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".itemfetch"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.itemfetch" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Revision"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.Revision" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
