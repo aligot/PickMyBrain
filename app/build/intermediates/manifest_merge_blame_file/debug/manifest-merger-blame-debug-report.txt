@@ -24,7 +24,7 @@
 16-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:26:22-64
 17
 18    <application
-18-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:7:5-71:19
+18-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:7:5-70:19
 19        android:allowBackup="true"
 19-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:8:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -133,7 +133,7 @@
 74            </intent-filter>
 75        </activity>
 76        <activity
-76-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:61:9-70:20
+76-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:61:9-69:20
 77            android:name="com.example.listviewinlistview.Revision"
 77-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:62:13-37
 78            android:exported="false"
@@ -141,7 +141,7 @@
 79            android:theme="@style/Theme.AppCompat" >
 79-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:64:13-51
 80            <intent-filter>
-80-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:65:13-69:29
+80-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:65:13-68:29
 81                <action android:name="package.Revision" />
 81-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:66:17-59
 81-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:66:25-56

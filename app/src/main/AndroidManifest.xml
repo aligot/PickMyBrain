@@ -64,7 +64,6 @@
             android:theme="@style/Theme.AppCompat" >
             <intent-filter>
                 <action android:name="package.Revision" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
