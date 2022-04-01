@@ -13,7 +13,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.listviewinlistview.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,9 +20,6 @@ import java.lang.String;
 public final class ActivityRevisionBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
-
-  @NonNull
-  public final FloatingActionButton btnBack;
 
   @NonNull
   public final Button btnValidate;
@@ -34,11 +30,9 @@ public final class ActivityRevisionBinding implements ViewBinding {
   @NonNull
   public final EditText traduction;
 
-  private ActivityRevisionBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FloatingActionButton btnBack, @NonNull Button btnValidate,
+  private ActivityRevisionBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnValidate,
       @NonNull TextView textWord, @NonNull EditText traduction) {
     this.rootView = rootView;
-    this.btnBack = btnBack;
     this.btnValidate = btnValidate;
     this.textWord = textWord;
     this.traduction = traduction;
@@ -71,12 +65,6 @@ public final class ActivityRevisionBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnBack;
-      FloatingActionButton btnBack = ViewBindings.findChildViewById(rootView, id);
-      if (btnBack == null) {
-        break missingId;
-      }
-
       id = R.id.btnValidate;
       Button btnValidate = ViewBindings.findChildViewById(rootView, id);
       if (btnValidate == null) {
@@ -95,8 +83,8 @@ public final class ActivityRevisionBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRevisionBinding((ConstraintLayout) rootView, btnBack, btnValidate,
-          textWord, traduction);
+      return new ActivityRevisionBinding((ConstraintLayout) rootView, btnValidate, textWord,
+          traduction);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

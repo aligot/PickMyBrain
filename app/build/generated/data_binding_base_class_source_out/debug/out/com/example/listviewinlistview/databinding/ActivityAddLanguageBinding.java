@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.listviewinlistview.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -26,20 +25,15 @@ public final class ActivityAddLanguageBinding implements ViewBinding {
   public final Button btn;
 
   @NonNull
-  public final FloatingActionButton buttonBack;
-
-  @NonNull
   public final EditText editText;
 
   @NonNull
   public final CircleImageView languageImage;
 
   private ActivityAddLanguageBinding(@NonNull RelativeLayout rootView, @NonNull Button btn,
-      @NonNull FloatingActionButton buttonBack, @NonNull EditText editText,
-      @NonNull CircleImageView languageImage) {
+      @NonNull EditText editText, @NonNull CircleImageView languageImage) {
     this.rootView = rootView;
     this.btn = btn;
-    this.buttonBack = buttonBack;
     this.editText = editText;
     this.languageImage = languageImage;
   }
@@ -77,12 +71,6 @@ public final class ActivityAddLanguageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.buttonBack;
-      FloatingActionButton buttonBack = ViewBindings.findChildViewById(rootView, id);
-      if (buttonBack == null) {
-        break missingId;
-      }
-
       id = R.id.editText;
       EditText editText = ViewBindings.findChildViewById(rootView, id);
       if (editText == null) {
@@ -95,7 +83,7 @@ public final class ActivityAddLanguageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddLanguageBinding((RelativeLayout) rootView, btn, buttonBack, editText,
+      return new ActivityAddLanguageBinding((RelativeLayout) rootView, btn, editText,
           languageImage);
     }
     String missingId = rootView.getResources().getResourceName(id);

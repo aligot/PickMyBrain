@@ -25,9 +25,6 @@ public final class ActivityItemfetchBinding implements ViewBinding {
   public final FloatingActionButton add;
 
   @NonNull
-  public final FloatingActionButton button2;
-
-  @NonNull
   public final FloatingActionButton button3;
 
   @NonNull
@@ -37,12 +34,10 @@ public final class ActivityItemfetchBinding implements ViewBinding {
   public final SearchView searchItem;
 
   private ActivityItemfetchBinding(@NonNull RelativeLayout rootView,
-      @NonNull FloatingActionButton add, @NonNull FloatingActionButton button2,
-      @NonNull FloatingActionButton button3, @NonNull ListView itemListView,
-      @NonNull SearchView searchItem) {
+      @NonNull FloatingActionButton add, @NonNull FloatingActionButton button3,
+      @NonNull ListView itemListView, @NonNull SearchView searchItem) {
     this.rootView = rootView;
     this.add = add;
-    this.button2 = button2;
     this.button3 = button3;
     this.itemListView = itemListView;
     this.searchItem = searchItem;
@@ -81,12 +76,6 @@ public final class ActivityItemfetchBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button2;
-      FloatingActionButton button2 = ViewBindings.findChildViewById(rootView, id);
-      if (button2 == null) {
-        break missingId;
-      }
-
       id = R.id.button3;
       FloatingActionButton button3 = ViewBindings.findChildViewById(rootView, id);
       if (button3 == null) {
@@ -105,8 +94,8 @@ public final class ActivityItemfetchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityItemfetchBinding((RelativeLayout) rootView, add, button2, button3,
-          itemListView, searchItem);
+      return new ActivityItemfetchBinding((RelativeLayout) rootView, add, button3, itemListView,
+          searchItem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

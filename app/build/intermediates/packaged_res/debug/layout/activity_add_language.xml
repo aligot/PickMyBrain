@@ -16,7 +16,7 @@
         android:layout_marginTop="33dp"
         android:src="@drawable/language"
         app:civ_border_width="4dp" />
-
+<!--
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
         android:layout_marginEnd="334dp"
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_menu_revert" />
-
+-->
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"

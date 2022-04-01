@@ -1,19 +1,19 @@
 R_DEF: Internal format may change without notice
 local
 dimen fab_margin
+drawable custom_background
+drawable custom_background_2
+drawable custom_background_3
+drawable custom_background_4
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable language
 id Modify
 id add
 id btn
-id btnBack
 id btnModify
 id btnValidate
-id button2
 id button3
-id buttonBack
-id buttonBack3
 id editText
 id editTextB
 id editTextC
@@ -36,6 +36,7 @@ layout item
 layout item_word
 menu example_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string default_web_client_id
 string firebase_database_url

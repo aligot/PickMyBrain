@@ -34,7 +34,7 @@ public class add_word extends AppCompatActivity {
         wordEditText = findViewById(R.id.editTextB);
         traductionEditText = findViewById(R.id.editTextC);
         btnAddWord = findViewById(R.id.btnModify);
-        btnBack = findViewById(R.id.buttonBack3);
+        //btnBack = findViewById(R.id.buttonBack3);
 
         myImage= getIntent().getStringExtra("myImage");
         previousLang = getIntent().getStringExtra("correspondingLang");
@@ -42,6 +42,7 @@ public class add_word extends AppCompatActivity {
 
         this.setTitle("Add a new word");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
+        /*
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,16 +51,20 @@ public class add_word extends AppCompatActivity {
                 listCounter = getIntent().getStringArrayListExtra("CounterList");
                 nextIntent();
             }
-        });
+        });*/
         btnAddWord.setOnClickListener(view -> {
             String wordName = wordEditText.getText().toString().trim();
             String tradName = traductionEditText.getText().toString().trim();
             Boolean exists = false;
 
             if(wordIndex == 0){ // cas ou il ya encore 0 mots dans la langue qu'on cree
-                if(wordName.equals("") && tradName.equals("")){
-                    Toast.makeText(add_word.this, "Missing the translation and/or word",
+                if(wordName.equals("") && tradName.equals("")){ //
+                    Toast.makeText(add_word.this, "Missing the translation and word",
                         Toast.LENGTH_SHORT).show();
+                }
+                else if(wordName.equals("") || tradName.equals("")){ //
+                    Toast.makeText(add_word.this, "Missing the translation or the word",
+                            Toast.LENGTH_SHORT).show();
                 }
                 else{
                     //int compteur = 0;
@@ -76,9 +81,14 @@ public class add_word extends AppCompatActivity {
                 }
             }else{ //cas ou il y a deja des mots
                 if(wordName.equals("") || tradName.equals("")){
-                    Toast.makeText(add_word.this, "Missing the translation and/or word",
+                    Toast.makeText(add_word.this, "Missing the translation or word",
                             Toast.LENGTH_SHORT).show();
-                }else{
+                }
+                else if(wordName.equals("") && tradName.equals("")){
+                    Toast.makeText(add_word.this, "Missing the translation and word",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else{
                     wordListFetched = getIntent().getStringArrayListExtra("WordList");
                     tradListFetched = getIntent().getStringArrayListExtra("TradList");
                     for (int i = 0; i<wordListFetched.size();i++){
@@ -103,6 +113,14 @@ public class add_word extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        wordListFetched = getIntent().getStringArrayListExtra("WordList");
+        tradListFetched = getIntent().getStringArrayListExtra("TradList");
+        listCounter = getIntent().getStringArrayListExtra("CounterList");
+        nextIntent();
     }
     public void setHintAndText(EditText et1, EditText et2){
         et1.setText("");

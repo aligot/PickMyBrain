@@ -7,7 +7,7 @@
         tools:context=".add_word"
         android:orientation="vertical">
 
-
+<!--
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonBack3"
         android:layout_width="wrap_content"
@@ -16,6 +16,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_menu_revert" />
+    -->
     <EditText
         android:id="@+id/editTextB"
         android:layout_width="match_parent"

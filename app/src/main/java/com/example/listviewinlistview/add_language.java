@@ -58,7 +58,7 @@ public class add_language extends AppCompatActivity {
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         languageList = getIntent().getStringArrayListExtra("listLang");
         wordIndex = getIntent().getIntExtra("indexW",0);
-        btnRetour = findViewById(R.id.buttonBack);
+        //btnRetour = findViewById(R.id.buttonBack);
 
 
         languageImage.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +70,11 @@ public class add_language extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(gallery, "select picture"), PICK_IMAGE);
             }
         });
+        /*
         btnRetour.setOnClickListener(view -> {
             Intent intent = new Intent(add_language.this, MainActivity.class);
             startActivity(intent);
-        });
+        });*/
 
         button.setOnClickListener(view -> {
             Boolean exists = false;
@@ -89,7 +90,6 @@ public class add_language extends AppCompatActivity {
                         break;
                     }
                 }
-                System.out.println("je suis laa");
                 if(!exists){ //si la langue n'existait pas, on vient lui ajouter des mots
                     Intent intent = new Intent(add_language.this, itemfetch.class);
                     //System.out.println("dans add_language on a: "+languageName);
@@ -105,6 +105,13 @@ public class add_language extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent intentBack = new Intent(add_language.this, MainActivity.class);
+        startActivity(intentBack);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){

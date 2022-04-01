@@ -4,7 +4,7 @@ package com.example.listviewinlistview.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +17,7 @@ import java.lang.String;
 
 public final class ItemWordBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final TextView textTraduction;
@@ -25,7 +25,7 @@ public final class ItemWordBinding implements ViewBinding {
   @NonNull
   public final TextView textWord;
 
-  private ItemWordBinding(@NonNull LinearLayout rootView, @NonNull TextView textTraduction,
+  private ItemWordBinding(@NonNull RelativeLayout rootView, @NonNull TextView textTraduction,
       @NonNull TextView textWord) {
     this.rootView = rootView;
     this.textTraduction = textTraduction;
@@ -34,7 +34,7 @@ public final class ItemWordBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -71,7 +71,7 @@ public final class ItemWordBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemWordBinding((LinearLayout) rootView, textTraduction, textWord);
+      return new ItemWordBinding((RelativeLayout) rootView, textTraduction, textWord);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

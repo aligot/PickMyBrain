@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.listviewinlistview.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -25,20 +24,15 @@ public final class ActivityModifyWordBinding implements ViewBinding {
   public final Button btnModify;
 
   @NonNull
-  public final FloatingActionButton buttonBack3;
-
-  @NonNull
   public final EditText editTextB;
 
   @NonNull
   public final EditText editTextC;
 
   private ActivityModifyWordBinding(@NonNull RelativeLayout rootView, @NonNull Button btnModify,
-      @NonNull FloatingActionButton buttonBack3, @NonNull EditText editTextB,
-      @NonNull EditText editTextC) {
+      @NonNull EditText editTextB, @NonNull EditText editTextC) {
     this.rootView = rootView;
     this.btnModify = btnModify;
-    this.buttonBack3 = buttonBack3;
     this.editTextB = editTextB;
     this.editTextC = editTextC;
   }
@@ -76,12 +70,6 @@ public final class ActivityModifyWordBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.buttonBack3;
-      FloatingActionButton buttonBack3 = ViewBindings.findChildViewById(rootView, id);
-      if (buttonBack3 == null) {
-        break missingId;
-      }
-
       id = R.id.editTextB;
       EditText editTextB = ViewBindings.findChildViewById(rootView, id);
       if (editTextB == null) {
@@ -94,8 +82,8 @@ public final class ActivityModifyWordBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityModifyWordBinding((RelativeLayout) rootView, btnModify, buttonBack3,
-          editTextB, editTextC);
+      return new ActivityModifyWordBinding((RelativeLayout) rootView, btnModify, editTextB,
+          editTextC);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

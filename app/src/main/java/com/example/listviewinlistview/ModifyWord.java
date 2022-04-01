@@ -33,7 +33,7 @@ public class ModifyWord extends AppCompatActivity {
         wordEditText = findViewById(R.id.editTextB);
         traductionEditText = findViewById(R.id.editTextC);
         btnModify = findViewById(R.id.btnModify);
-        btnBack = findViewById(R.id.buttonBack3);
+        //btnBack = findViewById(R.id.buttonBack3);
         previousLang = getIntent().getStringExtra("correspondingLang");
         myImage= getIntent().getStringExtra("myImage");
         wordListFetched = getIntent().getStringArrayListExtra("WordList");
@@ -45,10 +45,15 @@ public class ModifyWord extends AppCompatActivity {
         traductionEditText.setText(tradListFetched.get(position));
         this.setTitle("Modify the word: "+  wordListFetched.get(position));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
+
+        for (int i=0; i<listCounter.size();i++){
+            listCounter.get(i);
+        }
+        /*
         btnBack.setOnClickListener(view -> {
             listCounter = getIntent().getStringArrayListExtra("CounterList");
             nextIntent();
-        });
+        });*/
 
         btnModify.setOnClickListener(view -> {
             exists = false;
@@ -79,6 +84,18 @@ public class ModifyWord extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public void onBackPressed(){
+        //super.onBackPressed();
+        listCounter = getIntent().getStringArrayListExtra("CounterList");
+        for (int i=0; i<listCounter.size();i++){
+            System.out.println(listCounter.get(i));
+        }
+        nextIntent();
+    }
+
     public void nextIntent(){
         Intent intent = new Intent(ModifyWord.this, itemfetch.class);
         intent.putExtra("myImage", myImage);

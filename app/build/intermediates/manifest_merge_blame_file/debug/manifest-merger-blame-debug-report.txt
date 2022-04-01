@@ -24,7 +24,7 @@
 16-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:26:22-64
 17
 18    <application
-18-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:7:5-70:19
+18-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:7:5-71:19
 19        android:allowBackup="true"
 19-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:8:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -32,211 +32,213 @@
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
 22-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:9:9-43
-23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:10:9-54
-24        android:supportsRtl="true"
-24-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:11:9-35
-25        android:testOnly="true" >
-26        <activity
-26-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:13:9-21:20
-27            android:name="com.example.listviewinlistview.ModifyWord"
-27-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:14:13-39
-28            android:exported="false"
-28-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:15:13-37
-29            android:theme="@style/Theme.AppCompat" >
-29-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:16:13-51
-30            <intent-filter>
-30-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:17:13-20:29
-31                <action android:name="package.ModifyWord" />
-31-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:18:17-61
-31-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:18:25-58
-32
-33                <category android:name="android.intent.category.DEFAULT" />
-33-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-76
-33-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:27-73
-34            </intent-filter>
-35        </activity>
-36        <activity
-36-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:23:9-31:20
-37            android:name="com.example.listviewinlistview.add_word"
-37-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:24:13-37
-38            android:exported="false"
+23        android:label="PickYourBrain"
+23-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:12:9-38
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:10:9-54
+25        android:supportsRtl="true"
+25-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:11:9-35
+26        android:testOnly="true" >
+27        <activity
+27-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:14:9-22:20
+28            android:name="com.example.listviewinlistview.ModifyWord"
+28-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:15:13-39
+29            android:exported="false"
+29-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:16:13-37
+30            android:theme="@style/Theme.AppCompat" >
+30-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:17:13-51
+31            <intent-filter>
+31-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:18:13-21:29
+32                <action android:name="package.ModifyWord" />
+32-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-61
+32-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:25-58
+33
+34                <category android:name="android.intent.category.DEFAULT" />
+34-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:17-76
+34-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:27-73
+35            </intent-filter>
+36        </activity>
+37        <activity
+37-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:24:9-32:20
+38            android:name="com.example.listviewinlistview.add_word"
 38-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:25:13-37
-39            android:theme="@style/Theme.AppCompat" >
-39-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:26:13-51
-40            <intent-filter>
-40-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:27:13-30:29
-41                <action android:name="package.add_word" />
-41-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:28:17-59
-41-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:28:25-56
-42
-43                <category android:name="android.intent.category.DEFAULT" />
-43-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-76
-43-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:27-73
-44            </intent-filter>
-45        </activity>
-46        <activity
-46-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:32:9-41:20
-47            android:name="com.example.listviewinlistview.add_language"
-47-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:33:13-41
-48            android:exported="false"
-48-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:34:13-37
-49            android:theme="@style/Theme.AppCompat" >
-49-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:35:13-51
-50            <intent-filter>
-50-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:36:13-40:29
-51                <action android:name="package.add_language" />
-51-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:37:17-63
-51-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:37:25-60
-52
-53                <category android:name="android.intent.category.DEFAULT" />
-53-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-76
-53-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:27-73
-54            </intent-filter>
-55        </activity>
-56        <activity
-56-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:42:9-51:20
-57            android:name="com.example.listviewinlistview.MainActivity"
-57-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:43:13-41
-58            android:exported="true"
-58-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:44:13-36
-59            android:theme="@style/Theme.AppCompat" >
-59-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:45:13-51
-60            <intent-filter>
-60-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:46:13-50:29
-61                <action android:name="android.intent.action.MAIN" />
-61-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:47:17-69
-61-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:47:25-66
-62
-63                <category android:name="android.intent.category.LAUNCHER" />
-63-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:49:17-77
-63-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:49:27-74
-64            </intent-filter>
-65        </activity>
-66        <activity
-66-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:52:9-60:20
-67            android:name="com.example.listviewinlistview.itemfetch"
-67-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:13-38
-68            android:exported="false"
-68-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:54:13-37
-69            android:theme="@style/Theme.AppCompat" >
-69-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:55:13-51
-70            <intent-filter>
-70-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:56:13-59:29
-71                <action android:name="package.itemfetch" />
-71-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:57:17-60
-71-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:57:25-57
-72
-73                <category android:name="android.intent.category.DEFAULT" />
-73-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-76
-73-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:27-73
-74            </intent-filter>
-75        </activity>
-76        <activity
-76-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:61:9-69:20
-77            android:name="com.example.listviewinlistview.Revision"
-77-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:62:13-37
-78            android:exported="false"
+39            android:exported="false"
+39-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:26:13-37
+40            android:theme="@style/Theme.AppCompat" >
+40-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:27:13-51
+41            <intent-filter>
+41-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:28:13-31:29
+42                <action android:name="package.add_word" />
+42-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:29:17-59
+42-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:29:25-56
+43
+44                <category android:name="android.intent.category.DEFAULT" />
+44-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:17-76
+44-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:27-73
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:33:9-42:20
+48            android:name="com.example.listviewinlistview.add_language"
+48-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:34:13-41
+49            android:exported="false"
+49-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:35:13-37
+50            android:theme="@style/Theme.AppCompat" >
+50-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:36:13-51
+51            <intent-filter>
+51-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:37:13-41:29
+52                <action android:name="package.add_language" />
+52-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:38:17-63
+52-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:38:25-60
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:17-76
+54-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:27-73
+55            </intent-filter>
+56        </activity>
+57        <activity
+57-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:43:9-52:20
+58            android:name="com.example.listviewinlistview.MainActivity"
+58-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:44:13-41
+59            android:exported="true"
+59-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:45:13-36
+60            android:theme="@style/Theme.AppCompat" >
+60-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:46:13-51
+61            <intent-filter>
+61-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:47:13-51:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:48:17-69
+62-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:48:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:50:17-77
+64-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:50:27-74
+65            </intent-filter>
+66        </activity>
+67        <activity
+67-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:9-61:20
+68            android:name="com.example.listviewinlistview.itemfetch"
+68-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:54:13-38
+69            android:exported="false"
+69-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:55:13-37
+70            android:theme="@style/Theme.AppCompat" >
+70-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:56:13-51
+71            <intent-filter>
+71-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:57:13-60:29
+72                <action android:name="package.itemfetch" />
+72-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:58:17-60
+72-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:58:25-57
+73
+74                <category android:name="android.intent.category.DEFAULT" />
+74-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:17-76
+74-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:27-73
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:62:9-70:20
+78            android:name="com.example.listviewinlistview.Revision"
 78-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:63:13-37
-79            android:theme="@style/Theme.AppCompat" >
-79-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:64:13-51
-80            <intent-filter>
-80-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:65:13-68:29
-81                <action android:name="package.Revision" />
-81-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:66:17-59
-81-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:66:25-56
-82
-83                <category android:name="android.intent.category.DEFAULT" />
-83-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:17-76
-83-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:19:27-73
-84            </intent-filter>
-85        </activity>
-86
-87        <service
-87-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:29:9-35:19
-88            android:name="com.google.firebase.components.ComponentDiscoveryService"
-88-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:30:13-84
-89            android:directBootAware="true"
-89-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:35:13-43
-90            android:exported="false" >
-90-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:31:13-37
-91            <meta-data
-91-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:32:13-34:85
-92                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-92-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:33:17-109
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:34:17-82
-94            <meta-data
-94-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:33:13-35:85
-95                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-95-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:34:17-107
-96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:35:17-82
-97        </service>
-98
-99        <activity
-99-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-100-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-101            android:exported="false"
-101-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-102            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-102-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-103
-104        <provider
-104-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:26:9-31:39
-105            android:name="com.google.firebase.provider.FirebaseInitProvider"
-105-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:27:13-77
-106            android:authorities="com.example.listviewinlistview.firebaseinitprovider"
-106-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:28:13-72
-107            android:directBootAware="true"
-107-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:29:13-43
-108            android:exported="false"
-108-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:30:13-37
-109            android:initOrder="100" />
-109-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:31:13-36
-110
-111        <meta-data
-111-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
-112            android:name="com.google.android.gms.version"
-112-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
-113            android:value="@integer/google_play_services_version" />
-113-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
-114
-115        <provider
-115-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-116            android:name="androidx.startup.InitializationProvider"
-116-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
-117            android:authorities="com.example.listviewinlistview.androidx-startup"
-117-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
-118            android:exported="false" >
-118-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
-119            <meta-data
-119-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-120                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-120-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
-121                android:value="androidx.startup" />
-121-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
-122            <meta-data
-122-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-123                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-123-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-124                android:value="androidx.startup" />
-124-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-125        </provider>
-126
-127        <uses-library
-127-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-128            android:name="androidx.window.extensions"
-128-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-129            android:required="false" />
-129-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-130        <uses-library
-130-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-131            android:name="androidx.window.sidecar"
-131-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-132            android:required="false" />
-132-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
-133    </application>
-134
-135</manifest>
+79            android:exported="false"
+79-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:64:13-37
+80            android:theme="@style/Theme.AppCompat" >
+80-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:65:13-51
+81            <intent-filter>
+81-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:66:13-69:29
+82                <action android:name="package.Revision" />
+82-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:67:17-59
+82-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:67:25-56
+83
+84                <category android:name="android.intent.category.DEFAULT" />
+84-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:17-76
+84-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:20:27-73
+85            </intent-filter>
+86        </activity>
+87
+88        <service
+88-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:29:9-35:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:30:13-84
+90            android:directBootAware="true"
+90-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:35:13-43
+91            android:exported="false" >
+91-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:31:13-37
+92            <meta-data
+92-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:32:13-34:85
+93                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+93-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:33:17-109
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-database:20.0.4] /Users/nikitafaesch/.gradle/caches/transforms-3/89c0e7bceaff940f2a31729a92b40ccc/transformed/firebase-database-20.0.4/AndroidManifest.xml:34:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:33:13-35:85
+96                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+96-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:34:17-107
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-storage:20.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/63e6681c0009f83fb78320eb33169d99/transformed/firebase-storage-20.0.1/AndroidManifest.xml:35:17-82
+98        </service>
+99
+100        <activity
+100-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+101-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+102            android:exported="false"
+102-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+103-->[com.google.android.gms:play-services-base:18.0.1] /Users/nikitafaesch/.gradle/caches/transforms-3/480ced47afd118d4f32a0bbd509ea0d1/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+104
+105        <provider
+105-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:26:9-31:39
+106            android:name="com.google.firebase.provider.FirebaseInitProvider"
+106-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:27:13-77
+107            android:authorities="com.example.listviewinlistview.firebaseinitprovider"
+107-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:28:13-72
+108            android:directBootAware="true"
+108-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:29:13-43
+109            android:exported="false"
+109-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:30:13-37
+110            android:initOrder="100" />
+110-->[com.google.firebase:firebase-common:20.1.0] /Users/nikitafaesch/.gradle/caches/transforms-3/28ee830cf7e266aa1eae9bf476661dde/transformed/firebase-common-20.1.0/AndroidManifest.xml:31:13-36
+111
+112        <meta-data
+112-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+113            android:name="com.google.android.gms.version"
+113-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+114            android:value="@integer/google_play_services_version" />
+114-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/f8f5c76e46a42f0734a947b09b961cf5/transformed/play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+115
+116        <provider
+116-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+117            android:name="androidx.startup.InitializationProvider"
+117-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+118            android:authorities="com.example.listviewinlistview.androidx-startup"
+118-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+119            android:exported="false" >
+119-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+120            <meta-data
+120-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+121                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+121-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+122                android:value="androidx.startup" />
+122-->[androidx.emoji2:emoji2:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/d7d27c68601a04d3e1bdd881f9c325b2/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+123            <meta-data
+123-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+124                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+124-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+125                android:value="androidx.startup" />
+125-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikitafaesch/.gradle/caches/transforms-3/7daa621a439079be7472f59471227879/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+126        </provider>
+127
+128        <uses-library
+128-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+129            android:name="androidx.window.extensions"
+129-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+130            android:required="false" />
+130-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+131        <uses-library
+131-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+132            android:name="androidx.window.sidecar"
+132-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+133            android:required="false" />
+133-->[androidx.window:window:1.0.0] /Users/nikitafaesch/.gradle/caches/transforms-3/a35f43c2a7382f188420295aaba4b3f2/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+134    </application>
+135
+136</manifest>

@@ -47,7 +47,7 @@ public class itemfetch extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         btnAddWord = findViewById(R.id.add);
-        btnRetour = findViewById(R.id.button2);
+        //btnRetour = findViewById(R.id.button2);
         btnRevisions = findViewById(R.id.button3);
         searchViewWord = findViewById(R.id.searchItem);
         word = new Word();
@@ -88,12 +88,12 @@ public class itemfetch extends AppCompatActivity {
             passToIntent(intentA);
             startActivity(intentA);
         });
-
+        /*
         btnRetour.setOnClickListener(view -> {
             Intent intentB = new Intent(itemfetch.this, MainActivity.class);
             intentB.putExtra("myImage", myImage);
             startActivity(intentB);
-        });
+        });*/
 
         btnRevisions.setOnClickListener(view -> {
             if(wordListFetched.size()!=0){
@@ -124,6 +124,13 @@ public class itemfetch extends AppCompatActivity {
                 return false;
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent intentBack = new Intent(itemfetch.this, MainActivity.class);
+        intentBack.putExtra("myImage", myImage);
+        startActivity(intentBack);
     }
 
 
