@@ -7,34 +7,54 @@
         tools:context=".add_word"
         android:orientation="vertical">
 
-<!--
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonBack3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|right"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
-    -->
+
+    <!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonBack3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+        -->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/languageImage"
+        android:layout_width="132dp"
+        android:layout_height="157dp"
+        android:layout_above="@+id/editTextB"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="13dp"
+        android:src="@drawable/language"
+        app:civ_border_width="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
     <EditText
         android:id="@+id/editTextB"
         android:layout_width="match_parent"
         android:layout_height="77dp"
         android:layout_above="@+id/editTextC"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint="Add a new word..."
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextC"
         android:layout_width="match_parent"
         android:layout_height="77dp"
-        android:layout_above="@+id/btnModify"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="350dp"
         android:ems="10"
-        android:hint="Corresponding traduction..."
+        android:hint="Corresponding translation..."
         android:inputType="textPersonName" />
 
     <Button
@@ -42,8 +62,10 @@
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="322dp"
-        android:text="Add Word" />
+        android:layout_marginBottom="287dp"
+        android:text="Add Word"
+
+        app:backgroundTint="#ff69b4" />
 
 </RelativeLayout>
 

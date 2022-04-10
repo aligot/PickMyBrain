@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ModifyWord"
     android:orientation="vertical">
+
 <!--
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonBack3"
@@ -42,6 +43,8 @@
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="322dp"
+        app:backgroundTint="#ff69b4"
+
         android:text="Modify" />
 
 </RelativeLayout>

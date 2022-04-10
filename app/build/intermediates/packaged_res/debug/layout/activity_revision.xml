@@ -5,21 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Revision">
+<!--
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="278dp"
+        android:layout_height="76dp"
+        android:background="@null"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="2dp">
 
+        <ImageView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:src="@drawable/ic_launcher" />
+    </androidx.appcompat.widget.Toolbar>-->
 
     <EditText
-        android:id="@+id/traduction"
+        android:id="@+id/translation"
         android:layout_width="356dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:hint="Traduction..."
+        android:hint=""
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <TextView
         android:id="@+id/textWord"
@@ -29,32 +46,34 @@
         android:ems="25"
         android:text="TextWord"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toTopOf="@+id/traduction"
+        app:layout_constraintBottom_toTopOf="@+id/translation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/btnValidate"
         android:layout_width="204dp"
         android:layout_height="63dp"
         android:text="Validate"
+        app:backgroundTint="#ff69b4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/traduction"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/translation"
+        app:layout_constraintVertical_bias="0.121"
         tools:ignore="MissingConstraints" />
-<!--
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|right"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
--->
+    <!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+    -->
 </androidx.constraintlayout.widget.ConstraintLayout>

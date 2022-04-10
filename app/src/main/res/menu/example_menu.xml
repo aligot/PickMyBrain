@@ -3,6 +3,9 @@
     <item
         android:id="@+id/Modify"
         android:title="Modify"/>
+    <item
+        android:id="@+id/Inspect"
+        android:title="Inspect"/>
     <!--<item
         android:id="@+id/Delete"
         android:title="Delete"/>-->

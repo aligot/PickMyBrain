@@ -3,27 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/custom_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/custom_background_2.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/custom_background_3.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/custom_background_4.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.158" />
-        <entry key="app/src/main/res/layout/activity_add_language.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_add_word.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_itemfetch.xml" value="0.13649025069637882" />
+        <entry key="app/src/main/res/layout/activity_add_language.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_word.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1780821917808219" />
+        <entry key="app/src/main/res/layout/activity_inspect.xml" value="0.35381623262204" />
+        <entry key="app/src/main/res/layout/activity_itemfetch.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_languagelist.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_mai.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24714828897338403" />
         <entry key="app/src/main/res/layout/activity_modify.xml" value="0.296112060546875" />
         <entry key="app/src/main/res/layout/activity_modify_language.xml" value="0.11195542046605876" />
         <entry key="app/src/main/res/layout/activity_modify_word.xml" value="0.18645833333333334" />
-        <entry key="app/src/main/res/layout/activity_revision.xml" value="0.20905923344947736" />
+        <entry key="app/src/main/res/layout/activity_revision.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_add_language.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/custom_background.xml" value="0.11246200607902736" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.16614583333333333" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.24074074074074073" />
         <entry key="app/src/main/res/layout/item_in_item.xml" value="0.16614583333333333" />
-        <entry key="app/src/main/res/layout/item_word.xml" value="0.7179401784703352" />
+        <entry key="app/src/main/res/layout/item_word.xml" value="0.1" />
         <entry key="app/src/main/res/layout/itemfetch.xml" value="0.1046875" />
         <entry key="app/src/main/res/menu/example_menu.xml" value="0.228125" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />

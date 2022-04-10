@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -14,22 +15,18 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class itemfetch extends AppCompatActivity {
 
-    List<String> wordListFetched,tradListFetched,listCounter;
+    List<String> wordListFetched,tradListFetched,listCounter,listDate;
     TextView textView;
     ArrayList<Word> arrayOfWords = new ArrayList<>();
-    private FloatingActionButton btnAddWord, btnRetour,btnRevisions;
+    private FloatingActionButton btnAddWord,btnRevisions;
     DatabaseReference databaseReference;
     String previousLang, myLanguageClicked;
     SearchView searchViewWord;
@@ -52,20 +49,25 @@ public class itemfetch extends AppCompatActivity {
         searchViewWord = findViewById(R.id.searchItem);
         word = new Word();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
+
+        listDate = getIntent().getStringArrayListExtra("listDate");
         wordListFetched = getIntent().getStringArrayListExtra("listWord");
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
-        previousLang = getIntent().getStringExtra("myLanguage");
+        previousLang = getIntent().getStringExtra("language");
+        System.out.println(wordListFetched);
+        System.out.println(tradListFetched);
+        System.out.println(listCounter);
+        System.out.println(listDate);
         myLanguageClicked = getIntent().getStringExtra("myLanguageClicked");
         myImage = getIntent().getStringExtra("myImage");
         wordIndex = getIntent().getIntExtra("indexW", 0);
 
         System.out.println("dans itemfetch wordindex vaut: " + wordIndex);
-        System.out.println("dans itemFetch: " + wordIndex);
 
         if (wordListFetched != null) {
             for (int i = 0; i < wordListFetched.size(); i++) {
-                Word word = new Word(wordListFetched.get(i), tradListFetched.get(i), Integer.parseInt(listCounter.get(i)));
+                Word word = new Word(wordListFetched.get(i), tradListFetched.get(i), listDate.get(i),Integer.parseInt(listCounter.get(i)));
                 arrayOfWords.add(i, word);
                 // Construct the data source
                 // Create the adapter to convert the array to views
@@ -88,15 +90,11 @@ public class itemfetch extends AppCompatActivity {
             passToIntent(intentA);
             startActivity(intentA);
         });
-        /*
-        btnRetour.setOnClickListener(view -> {
-            Intent intentB = new Intent(itemfetch.this, MainActivity.class);
-            intentB.putExtra("myImage", myImage);
-            startActivity(intentB);
-        });*/
 
         btnRevisions.setOnClickListener(view -> {
             if(wordListFetched.size()!=0){
+                MediaPlayer ring= MediaPlayer.create(getApplicationContext(),R.raw.revision);
+                ring.start();
                 Intent intentC = new Intent(itemfetch.this, Revision.class);
                 if (previousLang == null) {
                     intentC.putExtra("language", myLanguageClicked);
@@ -104,7 +102,9 @@ public class itemfetch extends AppCompatActivity {
                 intentC.putExtra("myImage", myImage);
                 intentC.putStringArrayListExtra("wordListRevision", (ArrayList<String>) wordListFetched);
                 intentC.putStringArrayListExtra("tradListRevision", (ArrayList<String>) tradListFetched);
-                intentC.putStringArrayListExtra("listcounter", (ArrayList<String>) listCounter);
+                intentC.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
+                intentC.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
+                intentC.putExtra("indexW", wordIndex);
                 startActivity(intentC);
             }else{
                 Toast.makeText(this, "1st add words for revision",Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class itemfetch extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        Intent intentBack = new Intent(itemfetch.this, MainActivity.class);
+        Intent intentBack = new Intent(itemfetch.this, HomeActivity.class);
         intentBack.putExtra("myImage", myImage);
         startActivity(intentBack);
     }
@@ -154,6 +154,12 @@ public class itemfetch extends AppCompatActivity {
                 passToIntent(intentD);
                 intentD.putExtra("theWordIndex", position);
                 startActivity(intentD);
+                return true;
+            case R.id.Inspect:
+                Intent intentInspect = new Intent(itemfetch.this, inspect.class);
+                passToIntent(intentInspect);
+                intentInspect.putExtra("theWordIndex", position);
+                startActivity(intentInspect);
                 return true;
 /*
             case R.id.Delete:
@@ -234,10 +240,17 @@ public class itemfetch extends AppCompatActivity {
             intent.putExtra("correspondingLang", myLanguageClicked);
         } else intent.putExtra("correspondingLang", previousLang);
         //intentA.putExtra("myImage", myImage);
-        intent.putStringArrayListExtra("WordList", (ArrayList<String>) wordListFetched);
-        intent.putStringArrayListExtra("TradList", (ArrayList<String>) tradListFetched);
-        intent.putStringArrayListExtra("CounterList", (ArrayList<String>) listCounter);
+        intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
+        intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
+        intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
+        intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
         intent.putExtra("indexW", wordIndex);
+
+        System.out.println(wordListFetched);
+        System.out.println(tradListFetched);
+        System.out.println(listCounter);
+        System.out.println(listDate);
+
     }
 
 

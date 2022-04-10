@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.listviewinlistview.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,15 +26,11 @@ public final class ActivityAddLanguageBinding implements ViewBinding {
   @NonNull
   public final EditText editText;
 
-  @NonNull
-  public final CircleImageView languageImage;
-
   private ActivityAddLanguageBinding(@NonNull RelativeLayout rootView, @NonNull Button btn,
-      @NonNull EditText editText, @NonNull CircleImageView languageImage) {
+      @NonNull EditText editText) {
     this.rootView = rootView;
     this.btn = btn;
     this.editText = editText;
-    this.languageImage = languageImage;
   }
 
   @Override
@@ -77,14 +72,7 @@ public final class ActivityAddLanguageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.languageImage;
-      CircleImageView languageImage = ViewBindings.findChildViewById(rootView, id);
-      if (languageImage == null) {
-        break missingId;
-      }
-
-      return new ActivityAddLanguageBinding((RelativeLayout) rootView, btn, editText,
-          languageImage);
+      return new ActivityAddLanguageBinding((RelativeLayout) rootView, btn, editText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

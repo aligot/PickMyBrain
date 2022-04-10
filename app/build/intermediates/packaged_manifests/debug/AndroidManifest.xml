@@ -20,10 +20,30 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="PickYourBrain"
+        android:label="PickMyBrain"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true" >
+        <activity
+            android:name="com.example.listviewinlistview.inspect"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="package.inspect" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.listviewinlistview.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.listviewinlistview.ModifyWord"
             android:exported="false"
@@ -55,13 +75,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.listviewinlistview.MainActivity"
-            android:exported="true"
+            android:name="com.example.listviewinlistview.HomeActivity"
+            android:exported="false"
             android:theme="@style/Theme.AppCompat" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="package.com.example.listviewinlistview" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity

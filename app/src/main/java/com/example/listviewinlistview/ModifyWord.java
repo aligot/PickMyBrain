@@ -20,11 +20,9 @@ public class ModifyWord extends AppCompatActivity {
     private EditText wordEditText, traductionEditText;
     private Button btnModify;
     DatabaseReference databaseReference;
-    String previousLang, myImage, wordName,tradName;
-    int wordIndex;
-    List<String> wordListFetched,tradListFetched,listCounter;
+    String previousLang, myImage, wordName,tradName,date;
+    List<String> wordListFetched,tradListFetched,listCounter,listDate;
     int position,compteur;
-    FloatingActionButton btnBack;
     Boolean exists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +34,17 @@ public class ModifyWord extends AppCompatActivity {
         //btnBack = findViewById(R.id.buttonBack3);
         previousLang = getIntent().getStringExtra("correspondingLang");
         myImage= getIntent().getStringExtra("myImage");
-        wordListFetched = getIntent().getStringArrayListExtra("WordList");
-        tradListFetched = getIntent().getStringArrayListExtra("TradList");
-        listCounter = getIntent().getStringArrayListExtra("CounterList");
+        wordListFetched = getIntent().getStringArrayListExtra("listWord");
+        tradListFetched = getIntent().getStringArrayListExtra("listTrad");
+        listCounter = getIntent().getStringArrayListExtra("listCounter");
+        listDate = getIntent().getStringArrayListExtra("listDate");
+
         position = getIntent().getIntExtra("theWordIndex",0);
         System.out.println("le mot est : "+ wordListFetched.get(position));
         wordEditText.setText(wordListFetched.get(position));
         traductionEditText.setText(tradListFetched.get(position));
         this.setTitle("Modify the word: "+  wordListFetched.get(position));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
-
-        for (int i=0; i<listCounter.size();i++){
-            listCounter.get(i);
-        }
         /*
         btnBack.setOnClickListener(view -> {
             listCounter = getIntent().getStringArrayListExtra("CounterList");
@@ -59,6 +55,7 @@ public class ModifyWord extends AppCompatActivity {
             exists = false;
             wordName = wordEditText.getText().toString();
             tradName = traductionEditText.getText().toString();
+
             if(wordName.equals("") || tradName.equals("")){
                 Toast.makeText(ModifyWord.this, "Missing the translation and/or word",
                         Toast.LENGTH_SHORT).show();
@@ -72,10 +69,10 @@ public class ModifyWord extends AppCompatActivity {
                 }
                 System.out.println("exists= "+ exists);
                 if(!exists) {
+                    System.out.println("on rentre dans ce if ???");
                     compteur = 5; //par defaut si on change le mot, on remet son compteur a 5
-                    Word word = new Word(wordName, tradName, compteur);
+                    Word word = new Word(wordName, tradName, listDate.get(position), compteur);
                     modify(wordName,tradName,compteur);
-                    System.out.println("dans add_word if2 wordindex vaut: " + wordIndex);
                     Toast.makeText(ModifyWord.this, "Word has been modified", Toast.LENGTH_SHORT).show();
                     databaseReference.child(previousLang).child(String.valueOf(position+1)).setValue(word);
                     nextIntent();
@@ -89,7 +86,7 @@ public class ModifyWord extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         //super.onBackPressed();
-        listCounter = getIntent().getStringArrayListExtra("CounterList");
+        listCounter = getIntent().getStringArrayListExtra("listCounter");
         for (int i=0; i<listCounter.size();i++){
             System.out.println(listCounter.get(i));
         }
@@ -102,8 +99,9 @@ public class ModifyWord extends AppCompatActivity {
         intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
         intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
         intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
-        intent.putExtra("indexW", wordIndex);
-        intent.putExtra("myLanguage", previousLang);
+        intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
+        intent.putExtra("indexW",position);
+        intent.putExtra("language", previousLang);
         startActivity(intent);
     }
     public void modify(String word, String trad, int count){

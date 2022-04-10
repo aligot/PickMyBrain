@@ -20,12 +20,20 @@
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_word.xml"
     },
     {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_inspect.xml",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_inspect.xml"
+    },
+    {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_main.xml"
     },
     {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_language.xml",
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_language.xml"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home.xml",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_home.xml"
     },
     {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item.xml",

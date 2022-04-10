@@ -1,28 +1,15 @@
 package com.example.listviewinlistview;
 
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.provider.MediaStore;
-import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,9 +26,8 @@ public class add_language extends AppCompatActivity {
     private CircleImageView languageImage;
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
-    List<String> wordListFetched,tradListFetched,listCounter,languageList;
+    List<String> wordListFetched,tradListFetched,listCounter,languageList,dateList;
     int wordIndex;
-    FloatingActionButton btnRetour;
 
 
 
@@ -52,7 +38,8 @@ public class add_language extends AppCompatActivity {
         this.setTitle("Add a new Language");
         editText = findViewById(R.id.editText);
         button = findViewById(R.id.btn);
-        languageImage = (CircleImageView) findViewById(R.id.languageImage);
+        //languageImage = (CircleImageView) findViewById(R.id.languageImage);
+        dateList = getIntent().getStringArrayListExtra("listDate");
         wordListFetched = getIntent().getStringArrayListExtra("listWord");
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
@@ -60,7 +47,7 @@ public class add_language extends AppCompatActivity {
         wordIndex = getIntent().getIntExtra("indexW",0);
         //btnRetour = findViewById(R.id.buttonBack);
 
-
+/*
         languageImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +57,7 @@ public class add_language extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(gallery, "select picture"), PICK_IMAGE);
             }
         });
-        /*
+
         btnRetour.setOnClickListener(view -> {
             Intent intent = new Intent(add_language.this, MainActivity.class);
             startActivity(intent);
@@ -93,11 +80,12 @@ public class add_language extends AppCompatActivity {
                 if(!exists){ //si la langue n'existait pas, on vient lui ajouter des mots
                     Intent intent = new Intent(add_language.this, itemfetch.class);
                     //System.out.println("dans add_language on a: "+languageName);
-                    intent.putExtra("myLanguage", languageName);
+                    intent.putExtra("language", languageName);
                     editText.setHint("Add a new language...");
                     intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched); //to pass an Arraylist from one activity to another
                     intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
                     intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
+                    intent.putStringArrayListExtra("listDate", (ArrayList<String>) dateList);
                     intent.putExtra("indexW", wordIndex);
                     System.out.println("dans add_language wordindex vaut: " + wordIndex);
                     startActivity(intent);
@@ -110,23 +98,11 @@ public class add_language extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        Intent intentBack = new Intent(add_language.this, MainActivity.class);
+        Intent intentBack = new Intent(add_language.this, HomeActivity.class);
         startActivity(intentBack);
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-            if (requestCode==PICK_IMAGE && resultCode == RESULT_OK){
-                imageUri = data.getData();
-                try{
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),imageUri);
-                    languageImage.setImageBitmap(bitmap);
 
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-            }
-    }
 
 /*
 
