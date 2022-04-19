@@ -82,7 +82,6 @@ public class Revision extends AppCompatActivity {
             System.out.println("on crée le bool1: "+bool1);
             System.out.println("counterLocal apres btn validate: "+counterLocal);
             cnt = Integer.parseInt(listcounter.get(counterLocal));
-
             if(bool2 && premierMotATraduire){
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
@@ -109,6 +108,8 @@ public class Revision extends AppCompatActivity {
                         increment(tradListForRevision.
                                 get(wordListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
+                        MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
+                        incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 "Wrong traduction !\nIt was "+tradListForRevision.
                                         get(wordListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
@@ -152,6 +153,8 @@ public class Revision extends AppCompatActivity {
                         increment(wordListForRevision.
                                 get(tradListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
+                        MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
+                        incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 "Wrong word !\nIt was "+wordListForRevision.
                                         get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
@@ -188,6 +191,8 @@ public class Revision extends AppCompatActivity {
                         increment(tradListForRevision.
                                 get(wordListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
+                        MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
+                        incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 "Wrong traduction !\nIt was "+tradListForRevision.
                                         get(wordListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
@@ -225,6 +230,8 @@ public class Revision extends AppCompatActivity {
                         increment(wordListForRevision.
                                 get(tradListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
+                        MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
+                        incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
                             "Wrong word !\nIt was "+wordListForRevision.
                                     get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
@@ -239,8 +246,6 @@ public class Revision extends AppCompatActivity {
             }
 
 
-
-
             System.out.println("counterLocal: "+counterLocal);
             if (counterLocal < listcounter.size()) { //counterLocal
                 // c'est l'index i.e. c'est ce qui permet de savoir a quel mot on est dans la liste
@@ -248,10 +253,7 @@ public class Revision extends AppCompatActivity {
                 counterLocal += 1;
                 cntTest += 1;
                 System.out.println("j'incremente COUNTERLOCAL et CNTTEST");
-
             }
-
-
 
             if (cntTest < 5) { //si on s'est teste sur moins de 5 mots
                 upperbound = 0;
@@ -268,6 +270,8 @@ public class Revision extends AppCompatActivity {
             } else { //si oui, on arrete le test et on donne le score
                 if (score<2){
                     score(R.drawable.custom_background);
+                    MediaPlayer fail= MediaPlayer.create(Revision.this,R.raw.fail);
+                    fail.start();
                 }
                 else if (score == 2 || score == 3){
                     score(R.drawable.custom_background_3);
@@ -353,6 +357,7 @@ public class Revision extends AppCompatActivity {
         System.out.println("Correct ! je decremente cnt et incremente score");
         cnt -= 1;
         score += 1;
+
         //listcounter.add(counterLocal, String.valueOf(cnt));
         System.out.println(listcounter);
         System.out.println("listcounter.get(counterLocal): "+listcounter.get(counterLocal));
@@ -368,6 +373,8 @@ public class Revision extends AppCompatActivity {
 
     public void increment(String str) {
         cnt += 1;
+        MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
+        incorrect.start();
         System.out.println(listcounter);
         System.out.println("listcounter.get(counterLocal): "+listcounter.get(counterLocal));
         System.out.println("counterLocal: "+counterLocal);
@@ -413,6 +420,8 @@ public class Revision extends AppCompatActivity {
     }
 
     public void toastCorrect(){
+        MediaPlayer success= MediaPlayer.create(Revision.this,R.raw.success);
+        success.start();
         Toast toast= Toast.makeText(getApplicationContext(), "Correct !", Toast.LENGTH_SHORT);
         CountDownTimer toastCountDown;
         int toastDurationInMilliSeconds = 2000;

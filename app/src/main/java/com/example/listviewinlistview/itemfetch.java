@@ -152,16 +152,39 @@ public class itemfetch extends AppCompatActivity {
                 System.out.println(previousLang);
                 System.out.println(myLanguageClicked);
                 passToIntent(intentD);
-                intentD.putExtra("theWordIndex", position);
+                intentD.putExtra("indexW", position);
+                System.out.println("DANS ITEMFETCH LA POSITION EST: "+position);
                 startActivity(intentD);
                 return true;
             case R.id.Inspect:
                 Intent intentInspect = new Intent(itemfetch.this, inspect.class);
                 passToIntent(intentInspect);
-                intentInspect.putExtra("theWordIndex", position);
+                intentInspect.putExtra("indexW", position);
                 startActivity(intentInspect);
                 return true;
-/*
+
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+    public void passToIntent(Intent intent) {
+        if (previousLang == null) {
+            intent.putExtra("correspondingLang", myLanguageClicked);
+        } else intent.putExtra("correspondingLang", previousLang);
+        //intentA.putExtra("myImage", myImage);
+        intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
+        intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
+        intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
+        intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
+        intent.putExtra("indexW", wordIndex);
+
+        System.out.println(wordListFetched);
+        System.out.println(tradListFetched);
+        System.out.println(listCounter);
+        System.out.println(listDate);
+
+    }
+    /*
             case R.id.Delete:
                 Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
                 //wordListFetched.remove(position);
@@ -231,27 +254,6 @@ public class itemfetch extends AppCompatActivity {
                 //startActivity(intentDel);
                 return true;
 */
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
-    public void passToIntent(Intent intent) {
-        if (previousLang == null) {
-            intent.putExtra("correspondingLang", myLanguageClicked);
-        } else intent.putExtra("correspondingLang", previousLang);
-        //intentA.putExtra("myImage", myImage);
-        intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
-        intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
-        intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
-        intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
-        intent.putExtra("indexW", wordIndex);
-
-        System.out.println(wordListFetched);
-        System.out.println(tradListFetched);
-        System.out.println(listCounter);
-        System.out.println(listDate);
-
-    }
 
 
 

@@ -28,14 +28,14 @@ public final class ActivityRevisionBinding implements ViewBinding {
   public final TextView textWord;
 
   @NonNull
-  public final EditText traduction;
+  public final EditText translation;
 
   private ActivityRevisionBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnValidate,
-      @NonNull TextView textWord, @NonNull EditText traduction) {
+      @NonNull TextView textWord, @NonNull EditText translation) {
     this.rootView = rootView;
     this.btnValidate = btnValidate;
     this.textWord = textWord;
-    this.traduction = traduction;
+    this.translation = translation;
   }
 
   @Override
@@ -77,14 +77,14 @@ public final class ActivityRevisionBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.traduction;
-      EditText traduction = ViewBindings.findChildViewById(rootView, id);
-      if (traduction == null) {
+      id = R.id.translation;
+      EditText translation = ViewBindings.findChildViewById(rootView, id);
+      if (translation == null) {
         break missingId;
       }
 
       return new ActivityRevisionBinding((ConstraintLayout) rootView, btnValidate, textWord,
-          traduction);
+          translation);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

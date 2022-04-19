@@ -51,8 +51,11 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 raw applause
+raw fail
+raw incorrect
 raw revision
 raw ring
+raw success
 string default_web_client_id
 string firebase_database_url
 string gcm_defaultSenderId

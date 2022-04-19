@@ -31,7 +31,7 @@ public class inspect extends AppCompatActivity {
 
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
-        position = getIntent().getIntExtra("theWordIndex",0);
+        position = getIntent().getIntExtra("indexW",0);
         textViewWord.setText(previousLang+": "+ wordListFetched.get(position));
         textViewTrad.setText("Translation: "+tradListFetched.get(position));
         textViewDate.setText("Word added the: \n"+dateListFetched.get(position));

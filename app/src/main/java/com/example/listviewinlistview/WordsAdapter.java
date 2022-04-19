@@ -31,7 +31,6 @@ public class WordsAdapter extends ArrayAdapter<Word> implements Filter {
         textTraduction.setText(word.traduction);
         // Return the completed view to render on screen
         return convertView;
-
     }
 
     @Override

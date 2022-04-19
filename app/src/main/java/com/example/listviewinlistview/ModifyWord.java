@@ -38,8 +38,8 @@ public class ModifyWord extends AppCompatActivity {
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         listDate = getIntent().getStringArrayListExtra("listDate");
+        position = getIntent().getIntExtra("indexW",0);
 
-        position = getIntent().getIntExtra("theWordIndex",0);
         System.out.println("le mot est : "+ wordListFetched.get(position));
         wordEditText.setText(wordListFetched.get(position));
         traductionEditText.setText(tradListFetched.get(position));
@@ -74,6 +74,7 @@ public class ModifyWord extends AppCompatActivity {
                     Word word = new Word(wordName, tradName, listDate.get(position), compteur);
                     modify(wordName,tradName,compteur);
                     Toast.makeText(ModifyWord.this, "Word has been modified", Toast.LENGTH_SHORT).show();
+                    System.out.println("DANS MODIFYWORD LA POSITION EST: "+position);
                     databaseReference.child(previousLang).child(String.valueOf(position+1)).setValue(word);
                     nextIntent();
                     //setHintAndText(wordEditText, traductionEditText);

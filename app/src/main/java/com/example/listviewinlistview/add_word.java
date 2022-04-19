@@ -38,7 +38,6 @@ public class add_word extends AppCompatActivity {
     int wordIndex;
     int cnt =1;
     List<String> wordListFetched,tradListFetched,listCounter,listDate;
-    boolean exists = false;
 
 
 
@@ -66,6 +65,7 @@ public class add_word extends AppCompatActivity {
         this.setTitle("Add a new word");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
         btnAddWord.setOnClickListener(view -> {
+            boolean exists = false;
             String wordName = wordEditText.getText().toString().trim();
             String tradName = traductionEditText.getText().toString().trim();
             Calendar calendar = Calendar.getInstance();
@@ -175,7 +175,9 @@ public class add_word extends AppCompatActivity {
                         System.out.println("dans add_word if2 wordindex vaut: " + wordIndex);
                         Toast.makeText(add_word.this, "New word added", Toast.LENGTH_SHORT).show();
                         System.out.println("2 : cnt vaut: " + cnt);
-                        databaseReference.child(previousLang).child(String.valueOf(wordIndex + 1)).setValue(word);
+                        databaseReference.child(previousLang).child(String.valueOf(wordListFetched.size())).setValue(word);
+                        System.out.println("DANS ADDWORD LA WORDINDEX EST: "+wordIndex);
+
                         wordIndex += 1;
                         setHintAndText(wordEditText, traductionEditText);
                         System.out.println("on va nextIntent la");
@@ -225,7 +227,7 @@ public class add_word extends AppCompatActivity {
 
 
         //intent.putExtra("myImage", myImage);
-        intent.putExtra("language", previousLang); //le probleme !
+        intent.putExtra("language", previousLang);
         intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
         intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
         intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
