@@ -201,14 +201,14 @@ action#package.add_word
 ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:47:17-59
 	android:name
 		ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:47:25-56
-activity#com.example.listviewinlistview.add_language
+activity#com.example.listviewinlistview.add_theme
 ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:52:9-61:20
 	android:exported
 		ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:54:13-37
 	android:theme
 		ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:55:13-51
 	android:name
-		ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:13-41
+		ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:13-38
 intent-filter#action:name:package.add_language+category:name:android.intent.category.DEFAULT
 ADDED from /Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:56:13-60:29
 action#package.add_language

@@ -5,24 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Revision">
-<!--
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="278dp"
-        android:layout_height="76dp"
-        android:background="@null"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="2dp">
-
-        <ImageView
-            android:id="@+id/tv_header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@null"
-            android:src="@drawable/ic_launcher" />
-    </androidx.appcompat.widget.Toolbar>-->
 
     <EditText
         android:id="@+id/translation"
@@ -65,15 +47,5 @@
         app:layout_constraintTop_toBottomOf="@+id/translation"
         app:layout_constraintVertical_bias="0.121"
         tools:ignore="MissingConstraints" />
-    <!--
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
-            app:srcCompat="@android:drawable/ic_menu_revert"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
-    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

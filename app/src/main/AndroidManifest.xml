@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add_language"
+            android:name=".add_theme"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>

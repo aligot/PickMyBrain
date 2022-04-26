@@ -112,10 +112,6 @@
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_add_language.xml.flat",
-        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_language.xml"
-    },
-    {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_item.xml.flat",
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/item.xml"
     },
@@ -186,6 +182,10 @@
     {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_add_theme.xml.flat",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_theme.xml"
     },
     {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/merged_res/debug/layout_activity_revision.xml.flat",

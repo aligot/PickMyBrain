@@ -36,7 +36,6 @@ public class itemfetch extends AppCompatActivity {
     String myImage;
     int position;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,6 @@ public class itemfetch extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         btnAddWord = findViewById(R.id.add);
-        //btnRetour = findViewById(R.id.button2);
         btnRevisions = findViewById(R.id.button3);
         searchViewWord = findViewById(R.id.searchItem);
         word = new Word();
@@ -55,15 +53,9 @@ public class itemfetch extends AppCompatActivity {
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         previousLang = getIntent().getStringExtra("language");
-        System.out.println(wordListFetched);
-        System.out.println(tradListFetched);
-        System.out.println(listCounter);
-        System.out.println(listDate);
         myLanguageClicked = getIntent().getStringExtra("myLanguageClicked");
         myImage = getIntent().getStringExtra("myImage");
         wordIndex = getIntent().getIntExtra("indexW", 0);
-
-        System.out.println("dans itemfetch wordindex vaut: " + wordIndex);
 
         if (wordListFetched != null) {
             for (int i = 0; i < wordListFetched.size(); i++) {
@@ -125,6 +117,7 @@ public class itemfetch extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -132,8 +125,6 @@ public class itemfetch extends AppCompatActivity {
         intentBack.putExtra("myImage", myImage);
         startActivity(intentBack);
     }
-
-
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -153,7 +144,6 @@ public class itemfetch extends AppCompatActivity {
                 System.out.println(myLanguageClicked);
                 passToIntent(intentD);
                 intentD.putExtra("indexW", position);
-                System.out.println("DANS ITEMFETCH LA POSITION EST: "+position);
                 startActivity(intentD);
                 return true;
             case R.id.Inspect:
@@ -162,99 +152,19 @@ public class itemfetch extends AppCompatActivity {
                 intentInspect.putExtra("indexW", position);
                 startActivity(intentInspect);
                 return true;
-
             default:
                 return super.onContextItemSelected(item);
         }
     }
+
     public void passToIntent(Intent intent) {
         if (previousLang == null) {
             intent.putExtra("correspondingLang", myLanguageClicked);
         } else intent.putExtra("correspondingLang", previousLang);
-        //intentA.putExtra("myImage", myImage);
         intent.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
         intent.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
         intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
         intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
         intent.putExtra("indexW", wordIndex);
-
-        System.out.println(wordListFetched);
-        System.out.println(tradListFetched);
-        System.out.println(listCounter);
-        System.out.println(listDate);
-
     }
-    /*
-            case R.id.Delete:
-                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
-                //wordListFetched.remove(position);
-                //tradListFetched.remove(position);
-                //listCounter.remove(position);
-                for (int i = 0; i<wordListFetched.size(); i++){
-                    System.out.println("word in wordlistfetched: " + wordListFetched.get(i));
-                    System.out.println("corresponding translation: " + tradListFetched.get(i));
-                }
-                Intent intentDel = new Intent(itemfetch.this, itemfetch.class);
-
-                System.out.println("position: " + position);
-
-                if (previousLang == null){
-                    System.out.println("databaseReference.child(myLanguageClicked).child(String.valueOf(position)).getKey(): "+databaseReference.child(myLanguageClicked).child(String.valueOf(position)).getKey());
-                    Query query = databaseReference.orderByChild("mot").equalTo(wordListFetched.get(position));
-                    query.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                if(databaseReference.child(myLanguageClicked).child(String.valueOf(position)).getKey().equals(String.valueOf(position))){
-                                    for (int i=0; i<wordListFetched.size();i++){
-                                        databaseReference.child(myLanguageClicked).child(String.valueOf(i)).toString();
-                                    }
-                                    databaseReference.child(myLanguageClicked).child(String.valueOf(position)).getRef().removeValue();
-                                }
-                            }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                        }
-                    });
-                    //if(databaseReference.child(myLanguageClicked).child(String.valueOf(position)).toString().equals())
-
-
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            snapshot.child(myLanguageClicked).get(String.valueOf(position)).getRef().;
-                            //System.out.println("snapshot.child(myLanguageClicked): "+snapshot.child(myLanguageClicked).child(String.valueOf(position)).getRef());
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                        }
-                    });
-                }else{
-
-                    //databaseReference.child(previousLang).child(String.valueOf(position)).removeValue();
-                    //intentDel.putExtra("myLanguage",previousLang);
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            System.out.println("222222 snapshot.child(myLanguageClicked): "+snapshot.child(myLanguageClicked).child(String.valueOf(position)));
-
-                            for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                                System.out.println(dataSnapshot.toString());
-                            }
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                        }
-                    });}
-
-
-                //intentDel.putStringArrayListExtra("listWord", (ArrayList<String>) wordListFetched);
-                //intentDel.putStringArrayListExtra("listTrad", (ArrayList<String>) tradListFetched);
-                //intentDel.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
-                //startActivity(intentDel);
-                return true;
-*/
-
-
-
 }

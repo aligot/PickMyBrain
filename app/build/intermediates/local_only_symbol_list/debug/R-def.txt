@@ -36,7 +36,7 @@ id textTraduction
 id textView
 id textWord
 id translation
-layout activity_add_language
+layout activity_add_theme
 layout activity_add_word
 layout activity_home
 layout activity_inspect

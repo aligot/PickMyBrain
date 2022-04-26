@@ -2602,7 +2602,6 @@ com.example.listviewinlistview:style/Theme.Material3.DayNight.NoActionBar = 0x7f
 com.example.listviewinlistview:attr/colorSecondary = 0x7f030104
 com.example.listviewinlistview:color/design_dark_default_color_secondary_variant = 0x7f050046
 com.example.listviewinlistview:style/Base.Widget.AppCompat.RatingBar.Small = 0x7f1100e6
-com.example.listviewinlistview:layout/activity_add_language = 0x7f0b001c
 com.example.listviewinlistview:attr/liftOnScroll = 0x7f030283
 com.example.listviewinlistview:color/m3_ref_palette_error40 = 0x7f0500de
 com.example.listviewinlistview:attr/hideOnScroll = 0x7f0301ec
@@ -4500,6 +4499,7 @@ com.example.listviewinlistview:style/Widget.Material3.TextInputLayout.OutlinedBo
 com.example.listviewinlistview:attr/animateCircleAngleTo = 0x7f030033
 com.example.listviewinlistview:style/ThemeOverlay.MaterialComponents.MaterialAlertDialog.Centered = 0x7f11028b
 com.example.listviewinlistview:attr/alwaysExpand = 0x7f030032
+com.example.listviewinlistview:layout/activity_add_theme = 0x7f0b001c
 com.example.listviewinlistview:id/cut = 0x7f080093
 com.example.listviewinlistview:dimen/design_tab_max_width = 0x7f06008b
 com.example.listviewinlistview:attr/altSrc = 0x7f030031

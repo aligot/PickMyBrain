@@ -117,8 +117,8 @@
 66        </activity>
 67        <activity
 67-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:52:9-61:20
-68            android:name="com.example.listviewinlistview.add_language"
-68-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:13-41
+68            android:name="com.example.listviewinlistview.add_theme"
+68-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:53:13-38
 69            android:exported="false"
 69-->/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/AndroidManifest.xml:54:13-37
 70            android:theme="@style/Theme.AppCompat" >

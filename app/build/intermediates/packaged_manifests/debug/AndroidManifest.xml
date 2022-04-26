@@ -65,7 +65,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.listviewinlistview.add_language"
+            android:name="com.example.listviewinlistview.add_theme"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" >
             <intent-filter>

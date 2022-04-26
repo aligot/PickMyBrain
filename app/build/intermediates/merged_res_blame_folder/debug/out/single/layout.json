@@ -4,6 +4,10 @@
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_itemfetch.xml"
     },
     {
+        "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_theme.xml",
+        "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_add_theme.xml"
+    },
+    {
         "merged": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_revision.xml",
         "source": "/Users/nikitafaesch/AndroidStudioProjects/listviewinlistview/app/src/main/res/layout/activity_revision.xml"
     },

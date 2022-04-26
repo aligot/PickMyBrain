@@ -11,9 +11,10 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.158" />
         <entry key="app/src/main/res/layout/activity_add_language.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_theme.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_add_word.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1780821917808219" />
-        <entry key="app/src/main/res/layout/activity_inspect.xml" value="0.35381623262204" />
+        <entry key="app/src/main/res/layout/activity_inspect.xml" value="0.18456115722656247" />
         <entry key="app/src/main/res/layout/activity_itemfetch.xml" value="0.26786346435546876" />
         <entry key="app/src/main/res/layout/activity_languagelist.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_mai.xml" value="0.1" />

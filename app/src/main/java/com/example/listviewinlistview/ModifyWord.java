@@ -20,7 +20,7 @@ public class ModifyWord extends AppCompatActivity {
     private EditText wordEditText, traductionEditText;
     private Button btnModify;
     DatabaseReference databaseReference;
-    String previousLang, myImage, wordName,tradName,date;
+    String previousLang, myImage, wordName,tradName;
     List<String> wordListFetched,tradListFetched,listCounter,listDate;
     int position,compteur;
     Boolean exists;
@@ -31,7 +31,7 @@ public class ModifyWord extends AppCompatActivity {
         wordEditText = findViewById(R.id.editTextB);
         traductionEditText = findViewById(R.id.editTextC);
         btnModify = findViewById(R.id.btnModify);
-        //btnBack = findViewById(R.id.buttonBack3);
+
         previousLang = getIntent().getStringExtra("correspondingLang");
         myImage= getIntent().getStringExtra("myImage");
         wordListFetched = getIntent().getStringArrayListExtra("listWord");
@@ -40,22 +40,14 @@ public class ModifyWord extends AppCompatActivity {
         listDate = getIntent().getStringArrayListExtra("listDate");
         position = getIntent().getIntExtra("indexW",0);
 
-        System.out.println("le mot est : "+ wordListFetched.get(position));
         wordEditText.setText(wordListFetched.get(position));
         traductionEditText.setText(tradListFetched.get(position));
         this.setTitle("Modify the word: "+  wordListFetched.get(position));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
-        /*
-        btnBack.setOnClickListener(view -> {
-            listCounter = getIntent().getStringArrayListExtra("CounterList");
-            nextIntent();
-        });*/
-
         btnModify.setOnClickListener(view -> {
             exists = false;
             wordName = wordEditText.getText().toString();
             tradName = traductionEditText.getText().toString();
-
             if(wordName.equals("") || tradName.equals("")){
                 Toast.makeText(ModifyWord.this, "Missing the translation and/or word",
                         Toast.LENGTH_SHORT).show();
@@ -69,24 +61,19 @@ public class ModifyWord extends AppCompatActivity {
                 }
                 System.out.println("exists= "+ exists);
                 if(!exists) {
-                    System.out.println("on rentre dans ce if ???");
                     compteur = 5; //par defaut si on change le mot, on remet son compteur a 5
                     Word word = new Word(wordName, tradName, listDate.get(position), compteur);
                     modify(wordName,tradName,compteur);
                     Toast.makeText(ModifyWord.this, "Word has been modified", Toast.LENGTH_SHORT).show();
-                    System.out.println("DANS MODIFYWORD LA POSITION EST: "+position);
                     databaseReference.child(previousLang).child(String.valueOf(position+1)).setValue(word);
                     nextIntent();
-                    //setHintAndText(wordEditText, traductionEditText);
                 }
             }
         });
     }
 
-
     @Override
     public void onBackPressed(){
-        //super.onBackPressed();
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         for (int i=0; i<listCounter.size();i++){
             System.out.println(listCounter.get(i));

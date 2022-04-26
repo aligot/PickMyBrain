@@ -46,9 +46,7 @@ public class Revision extends AppCompatActivity {
         setContentView(R.layout.activity_revision);
         editText = findViewById(R.id.translation);
         textWord = findViewById(R.id.textWord);
-        //btnBack = findViewById(R.id.btnBack);
         btnValidate = findViewById(R.id.btnValidate);
-
 
         lang = getIntent().getStringExtra("language");
         wordListForRevision = getIntent().getStringArrayListExtra("wordListRevision");
@@ -76,20 +74,14 @@ public class Revision extends AppCompatActivity {
             setHintLanguage(editText);} //inversement si bool = false
         }
         btnValidate.setOnClickListener(view -> {
-            System.out.println("on rentre dans btnValidate");
             Random rd1 = new Random();
             boolean bool1 = rd1.nextBoolean(); //on genere un bool
-            System.out.println("on crée le bool1: "+bool1);
-            System.out.println("counterLocal apres btn validate: "+counterLocal);
             cnt = Integer.parseInt(listcounter.get(counterLocal));
             if(bool2 && premierMotATraduire){
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
                 }
                 traduction = editText.getText().toString().trim(); //trim() nécessiare?
-                System.out.println("counterLocal si bool=true: "+counterLocal);
-                System.out.println("donc faut introduire la trad");
-                System.out.println("moi je mets: "+traduction);
                 premierMotATraduire = true;
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
                     if (cnt > 1 && cnt < 6) {
@@ -118,9 +110,7 @@ public class Revision extends AppCompatActivity {
                         View toastView = toast.getView();
                         toastView.setBackgroundResource(R.drawable.custom_background);
                         toast.show();
-                        //System.out.println("Wrong traduction ! It was "+tradListForRevision.
-                         //       get(wordListForRevision.indexOf(textWord.getText().toString())+tradListForRevision.size()));
-                    }
+                        }
                 }setHintLanguage(editText);
             }
             else if (!bool2 && premierMotATraduire){
@@ -128,13 +118,8 @@ public class Revision extends AppCompatActivity {
                     counterLocal-=1;
                 }
                 mot = editText.getText().toString().trim();
-                System.out.println("counterLocal si bool=false: "+counterLocal);
-                System.out.println("donc faut introduire le mot");
-                System.out.println("moi je mets: "+mot);
                 premierMotATraduire = true;
-                System.out.println("cnt: "+cnt);
                 if(mot.equals(wordListForRevision.get(counterLocal))){//si le mot donné est bon
-                    System.out.println("on a le bon mot !");
                     if (cnt > 1 && cnt < 6) { //si le compteur du mot est compris entre 1 et 6 non inclu
                         //et qu'on a le bon mot: alors on peut le décrémenter.
                         decrement();
@@ -146,10 +131,6 @@ public class Revision extends AppCompatActivity {
                 }
                 else { //si mot donné est faux
                     if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
-                       // System.out.println("wordListForRevision.get(wordListForRevision.indexOf(textWord.getText().toString())): "+wordListForRevision.
-                         //       get(wordListForRevision.indexOf(textWord.getText().toString())));
-                        System.out.println("wordListForRevision.indexOf(textWord.getText().toString()): "+wordListForRevision.indexOf(textWord.getText().toString()));
-                        System.out.println("textWord.getText().toString(): "+textWord.getText().toString());
                         increment(wordListForRevision.
                                 get(tradListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
@@ -158,8 +139,6 @@ public class Revision extends AppCompatActivity {
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 "Wrong word !\nIt was "+wordListForRevision.
                                         get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
-                      //  System.out.println("Wrong word ! It was "+wordListForRevision.
-                        //        get(tradListForRevision.indexOf(textWord.getText().toString())+tradListForRevision.size()));
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
                         toastView.setBackgroundResource(R.drawable.custom_background);
@@ -169,10 +148,7 @@ public class Revision extends AppCompatActivity {
             }
             else if(bool){ //faut la trad
                 // mtn on veut traiter le 1er mot qui est apparu
-                traduction = editText.getText().toString().trim(); //trim() nécessiare?
-                System.out.println("counterLocal si bool=true: "+counterLocal);
-                System.out.println("donc faut introduire la trad");
-                System.out.println("moi je mets: "+traduction);
+                traduction = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
                     if (cnt > 1 && cnt < 6) {
@@ -185,9 +161,6 @@ public class Revision extends AppCompatActivity {
                 }
                 else { //si traduction donnée est fausse
                     if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
-                        System.out.println(tradListForRevision);
-                        System.out.println(textWord.getText().toString());
-                        System.out.println(tradListForRevision.indexOf(textWord.getText().toString()));
                         increment(tradListForRevision.
                                 get(wordListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
@@ -196,8 +169,6 @@ public class Revision extends AppCompatActivity {
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 "Wrong traduction !\nIt was "+tradListForRevision.
                                         get(wordListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
-                        //System.out.println("Wrong traduction ! It was "+tradListForRevision.
-                           //     get(tradListForRevision.indexOf(textWord.getText().toString())+tradListForRevision.size()));
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
                         toastView.setBackgroundResource(R.drawable.custom_background);
@@ -206,14 +177,8 @@ public class Revision extends AppCompatActivity {
                 }setHintLanguage(editText);
             } else{ //bool = faux: on veut mot
                 mot = editText.getText().toString().trim();
-                System.out.println("counterLocal si bool=false: "+counterLocal);
-                System.out.println("donc faut introduire le mot");
-                System.out.println("moi je mets: "+mot);
-                System.out.println("cnt: "+cnt);
                 premierMotATraduire = true;
                 if(mot.equals(wordListForRevision.get(counterLocal))){ //si le mot donné est bon
-                    System.out.println("on a le bon mot !");
-
                     if (cnt > 1 && cnt < 6) {
                         decrement();
                     }
@@ -224,9 +189,6 @@ public class Revision extends AppCompatActivity {
                 }
                 else { //si mot donné est faux donnée est fausse
                     if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
-                        System.out.println(textWord.getText().toString());
-                        System.out.println(wordListForRevision);
-                        System.out.println(wordListForRevision.indexOf(textWord.getText().toString()));
                         increment(wordListForRevision.
                                 get(tradListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
                     } else if (cnt == 5) {
@@ -235,8 +197,6 @@ public class Revision extends AppCompatActivity {
                         Toast toast= Toast.makeText(getApplicationContext(),
                             "Wrong word !\nIt was "+wordListForRevision.
                                     get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
-                        System.out.println("Wrong word ! It was "+wordListForRevision.
-                                get(tradListForRevision.indexOf(textWord.getText().toString())));
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
                         toastView.setBackgroundResource(R.drawable.custom_background);
@@ -244,15 +204,11 @@ public class Revision extends AppCompatActivity {
                     }
                 }
             }
-
-
-            System.out.println("counterLocal: "+counterLocal);
             if (counterLocal < listcounter.size()) { //counterLocal
                 // c'est l'index i.e. c'est ce qui permet de savoir a quel mot on est dans la liste
                 //cntTest c'est pour savoir a cmb de mots on est dans le test
                 counterLocal += 1;
                 cntTest += 1;
-                System.out.println("j'incremente COUNTERLOCAL et CNTTEST");
             }
 
             if (cntTest < 5) { //si on s'est teste sur moins de 5 mots
@@ -291,82 +247,52 @@ public class Revision extends AppCompatActivity {
         Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding word", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
-        System.out.println("Give the corresponding word");
-        System.out.println(listcounter);
         for (int i = 0; i < listcounter.size(); i++) {
             upperbound += Integer.parseInt(listcounter.get(i));
         }
         upperbound+=1;
         int min = 1;
         borneSup = 1;
-        System.out.println("UPPERBOUND POUR LE INT_RANDOM VUAT= "+upperbound);
         int int_random = (int) (Math.random() * (upperbound - min ) + min)+1;
-        System.out.println("int_random: " + int_random);
         for (int i = 0; i < wordListForRevision.size() ; i++) {
-            System.out.println("i vaut: "+i);
             borneInf = borneSup;
             borneSup += Integer.parseInt(listcounter.get(i));
             if (int_random <= borneSup && int_random > borneInf && Integer.parseInt(listcounter.get(i)) > 0) {
-                System.out.println("ce qui va apparaitre: "+tradListForRevision.get(i));
-                System.out.println("ce qu'il faut mettre: "+wordListForRevision.get(i));
-                System.out.println("counterLocal: " + counterLocal);
                 textWord.setText(tradListForRevision.get(i));
                 counterLocal = i;
                 break;
             }
         }
     }
+
     public void revisionAlgoWord(int upperbound) {
-        System.out.println("Give the corresponding translation");
         Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding translation", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
-        System.out.println(listcounter);
         for (int i = 0; i < listcounter.size(); i++) {
             upperbound += Integer.parseInt(listcounter.get(i));
         }
         upperbound+=1;
         int min = 1;
         borneSup = 1;
-        System.out.println("UPPERBOUND POUR LE INT_RANDOM VUAT= "+upperbound);
         int int_random = (int) (Math.random() * (upperbound - min ) + min)+1;
-        System.out.println("int_random: " + int_random);
-        System.out.println(wordListForRevision);
         for (int i = 0; i < wordListForRevision.size() ; i++) {
             borneInf = borneSup;
             borneSup += Integer.parseInt(listcounter.get(i));
-            System.out.println("borneInf: " + borneInf);
-            System.out.println("borneSup: " + borneSup);
-            System.out.println("i vaut= "+i);
             if (int_random <= borneSup && int_random > borneInf && Integer.parseInt(listcounter.get(i)) > 0) {
-                System.out.println("ce qui va apparaitre: "+wordListForRevision.get(i));
-                System.out.println("ce qu'il faut mettre: "+tradListForRevision.get(i));
-
-                System.out.println("counterLocal: " + counterLocal);
                 textWord.setText(wordListForRevision.get(i));
                 counterLocal = i;
-
                 break;
             }
         }
     }
 
-
-
     public void decrement() {
-        System.out.println("Correct ! je decremente cnt et incremente score");
         cnt -= 1;
         score += 1;
-
-        //listcounter.add(counterLocal, String.valueOf(cnt));
-        System.out.println(listcounter);
-        System.out.println("listcounter.get(counterLocal): "+listcounter.get(counterLocal));
-        System.out.println("counterLocal: "+counterLocal);
-
         int x = Integer.parseInt(listcounter.get(counterLocal));
         x = x-1;
         listcounter.set(counterLocal, String.valueOf(x));
-        System.out.println(listcounter);
         databaseReference.child(String.valueOf(counterLocal + 1)).child("compteur").setValue(cnt);
         toastCorrect();
     }
@@ -375,17 +301,9 @@ public class Revision extends AppCompatActivity {
         cnt += 1;
         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
         incorrect.start();
-        System.out.println(listcounter);
-        System.out.println("listcounter.get(counterLocal): "+listcounter.get(counterLocal));
-        System.out.println("counterLocal: "+counterLocal);
         int x = Integer.parseInt(listcounter.get(counterLocal));
         x=x+1;
         listcounter.set(counterLocal, String.valueOf(x));
-
-        //listcounter.add(counterLocal, String.valueOf(cnt));
-        System.out.println(listcounter);
-        System.out.println("Wrong traduction! It was " + str);
-
         databaseReference.child(String.valueOf(counterLocal + 1)).child("compteur").setValue(cnt);
         Toast toast= Toast.makeText(getApplicationContext(),
                 "Wrong traduction.\nIt was " + str, Toast.LENGTH_SHORT);
@@ -407,8 +325,8 @@ public class Revision extends AppCompatActivity {
         toastView.setBackgroundResource(R.drawable.custom_background);
         toast.show();
         toastCountDown.start();
-        System.out.println("counterLocal: "+counterLocal);
     }
+
     public void score(Object obj ){
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Test is finished!\nScore : " + score + "/5", Toast.LENGTH_SHORT);
@@ -416,7 +334,6 @@ public class Revision extends AppCompatActivity {
         View toastView = toast.getView();
         toastView.setBackgroundResource((Integer) obj);
         toast.show();
-        System.out.println("counterLocal: "+counterLocal);
     }
 
     public void toastCorrect(){
@@ -443,11 +360,8 @@ public class Revision extends AppCompatActivity {
         toastCountDown.start();
     }
 
-    //public void toastIncorrect(String str){ }
-
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle("Exit");
@@ -461,10 +375,6 @@ public class Revision extends AppCompatActivity {
                     intent.putStringArrayListExtra("listCounter", (ArrayList<String>) listcounter);
                     intent.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
                     intent.putExtra("indexW",wordIndex);
-                    System.out.println(wordListForRevision);
-                    System.out.println(tradListForRevision);
-                    System.out.println(listcounter);
-                    System.out.println(listDate);
                     startActivity(intent);
                 });
         builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> {

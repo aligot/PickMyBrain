@@ -50,12 +50,5 @@ public class Word {
     public void setTraduction(String traduction) {
         this.traduction = traduction;
     }
-/*
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }*/
 }

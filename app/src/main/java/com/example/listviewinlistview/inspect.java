@@ -23,12 +23,10 @@ public class inspect extends AppCompatActivity {
         textViewScore = findViewById(R.id.inspectScore);
         textViewTrad = findViewById(R.id.inspectTrad);
         textViewWord = findViewById(R.id.inspectWord);
-
         previousLang = getIntent().getStringExtra("correspondingLang");
         myImage= getIntent().getStringExtra("myImage");
         wordListFetched = getIntent().getStringArrayListExtra("listWord");
         dateListFetched = getIntent().getStringArrayListExtra("listDate");
-
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         position = getIntent().getIntExtra("indexW",0);
