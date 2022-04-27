@@ -38,7 +38,7 @@
         android:layout_above="@+id/btn"
         android:layout_marginBottom="13dp"
         android:ems="10"
-        android:hint="Add a new theme..."
+        android:hint="Add a new Topic..."
         android:inputType="textPersonName" />
 
     <Button
@@ -48,6 +48,6 @@
         android:layout_alignParentBottom="true"
         app:backgroundTint="#ff69b4"
         android:layout_marginBottom="322dp"
-        android:text="Add theme"
+        android:text="Add Topic"
         android:textColor="#ffffff"/>
 </RelativeLayout>

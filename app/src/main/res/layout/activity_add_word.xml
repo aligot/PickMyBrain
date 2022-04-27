@@ -54,7 +54,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="350dp"
         android:ems="10"
-        android:hint="Corresponding translation..."
+        android:hint="Corresponding Value..."
         android:inputType="textPersonName" />
 
     <Button
@@ -63,7 +63,7 @@
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="287dp"
-        android:text="Add Word"
+        android:text="Add Element"
 
         app:backgroundTint="#ff69b4" />
 
