@@ -56,13 +56,13 @@ public class Revision extends AppCompatActivity {
         wordIndex = getIntent().getIntExtra("indexW",0);
         score = 0;
         Toast toast3 = Toast.makeText(Revision.this,
-                "5 words test begins !", Toast.LENGTH_SHORT);
+                "5 element Topic Quizz begins !", Toast.LENGTH_SHORT);
         toast3.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
         View toastView1 = toast3.getView();
         toastView1.setBackgroundResource(R.drawable.custom_background_4);
         toast3.show();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages").child(lang);
-        this.setTitle("Revisions for: " + lang);
+        this.setTitle(lang+"Topic Quizz");
         Random rd = new Random();
         boolean bool = rd.nextBoolean();//bool généré pour pour l'apparition du 1er mot de la rev
 
@@ -81,13 +81,11 @@ public class Revision extends AppCompatActivity {
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
                 }
-                traduction = editText.getText().toString().trim(); //trim() nécessiare?
+                traduction = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
                     if (cnt > 1 && cnt < 6) {
                         decrement();
-                        System.out.println("l'index a été décrémenté car j'ai trouvé la bonne " +
-                                "traduction et vaut: " + cnt);
                     }
                     else{ //si la traduction est correcte mais que ton cnt vaut 1: on met juste qu'on a la bonne rep
                         //mais on decremente ap le cnt
@@ -103,7 +101,7 @@ public class Revision extends AppCompatActivity {
                         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
                         incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
-                                "Wrong traduction !\nIt was "+tradListForRevision.
+                                "Wrong value !\nIt was "+tradListForRevision.
                                         get(wordListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
 
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -137,7 +135,7 @@ public class Revision extends AppCompatActivity {
                         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
                         incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
-                                "Wrong word !\nIt was "+wordListForRevision.
+                                "Wrong key !\nIt was "+wordListForRevision.
                                         get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
@@ -167,7 +165,7 @@ public class Revision extends AppCompatActivity {
                         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
                         incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
-                                "Wrong traduction !\nIt was "+tradListForRevision.
+                                "Wrong value !\nIt was "+tradListForRevision.
                                         get(wordListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
@@ -195,7 +193,7 @@ public class Revision extends AppCompatActivity {
                         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
                         incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
-                            "Wrong word !\nIt was "+wordListForRevision.
+                            "Wrong key !\nIt was "+wordListForRevision.
                                     get(tradListForRevision.indexOf(textWord.getText().toString())), Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                         View toastView = toast.getView();
@@ -244,7 +242,7 @@ public class Revision extends AppCompatActivity {
     }
 
     public void revisionAlgoTrad(int upperbound) {
-        Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding word", Toast.LENGTH_SHORT);
+        Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding key", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
         for (int i = 0; i < listcounter.size(); i++) {
@@ -266,7 +264,7 @@ public class Revision extends AppCompatActivity {
     }
 
     public void revisionAlgoWord(int upperbound) {
-        Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding translation", Toast.LENGTH_SHORT);
+        Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding value", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
         for (int i = 0; i < listcounter.size(); i++) {
@@ -306,7 +304,7 @@ public class Revision extends AppCompatActivity {
         listcounter.set(counterLocal, String.valueOf(x));
         databaseReference.child(String.valueOf(counterLocal + 1)).child("compteur").setValue(cnt);
         Toast toast= Toast.makeText(getApplicationContext(),
-                "Wrong traduction.\nIt was " + str, Toast.LENGTH_SHORT);
+                "Wrong value.\nIt was " + str, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
         CountDownTimer toastCountDown;
         int toastDurationInMilliSeconds = 7000;
@@ -329,7 +327,7 @@ public class Revision extends AppCompatActivity {
 
     public void score(Object obj ){
         Toast toast = Toast.makeText(getApplicationContext(),
-                "Test is finished!\nScore : " + score + "/5", Toast.LENGTH_SHORT);
+                "Topic Quizz is finished!\nTQ Score : " + score + "/5", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
         View toastView = toast.getView();
         toastView.setBackgroundResource((Integer) obj);
@@ -385,12 +383,12 @@ public class Revision extends AppCompatActivity {
 
     public void setHintTranslation(EditText et1) {
         et1.setText("");
-        et1.setHint("Translation...");
+        et1.setHint("Value");
     }
 
     public void setHintLanguage(EditText et1){
         et1.setText("");
-        et1.setHint(lang);
+        et1.setHint("Key");//et1.setHint(lang);
     }
 
 }

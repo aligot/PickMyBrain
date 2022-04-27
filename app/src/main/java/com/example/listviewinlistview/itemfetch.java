@@ -99,7 +99,7 @@ public class itemfetch extends AppCompatActivity {
                 intentC.putExtra("indexW", wordIndex);
                 startActivity(intentC);
             }else{
-                Toast.makeText(this, "1st add words for revision",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "1st add some entries for Topic Quizz",Toast.LENGTH_SHORT).show();
             }
 
         });

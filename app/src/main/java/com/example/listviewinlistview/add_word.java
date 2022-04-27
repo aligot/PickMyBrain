@@ -50,7 +50,7 @@ public class add_word extends AppCompatActivity {
         wordListFetched = getIntent().getStringArrayListExtra("listWord");
         tradListFetched = getIntent().getStringArrayListExtra("listTrad");
         setHintAndText(wordEditText, traductionEditText);
-        this.setTitle("Add a new word");
+        this.setTitle(previousLang);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
         btnAddWord.setOnClickListener(view -> {
             boolean exists = false;
@@ -60,11 +60,11 @@ public class add_word extends AppCompatActivity {
             String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
             if(wordIndex == 0){ // cas ou il ya encore 0 mots dans la langue qu'on cree
                 if(wordName.equals("") && tradName.equals("")){ //
-                    Toast.makeText(add_word.this, "Missing the translation and word",
+                    Toast.makeText(add_word.this, "Missing the key and the value",
                         Toast.LENGTH_SHORT).show();
                 }
                 else if(wordName.equals("") || tradName.equals("")){ //
-                    Toast toast4 = Toast.makeText(add_word.this, "Missing the translation and word",
+                    Toast toast4 = Toast.makeText(add_word.this, "Missing the key and the value",
                             Toast.LENGTH_SHORT);
                     toast4.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast4.show();
@@ -75,20 +75,20 @@ public class add_word extends AppCompatActivity {
                     databaseReference.child(previousLang).child(String.valueOf(cnt)).setValue(word);
                     setHintAndText(wordEditText, traductionEditText);
                     wordIndex += 1;
-                    Toast toast1 = Toast.makeText(add_word.this, "New word added", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(add_word.this, "New element added", Toast.LENGTH_SHORT);
                     toast1.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast1.show();
                     nextIntent();
                 }
             }else{
                 if(wordName.equals("") || tradName.equals("")){
-                    Toast toast3 = Toast.makeText(add_word.this, "Missing the translation or word",
+                    Toast toast3 = Toast.makeText(add_word.this, "Missing the key and the value",
                             Toast.LENGTH_SHORT);
                     toast3.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast3.show();
                 }
                 else if(wordName.equals("") && tradName.equals("")){
-                    Toast toast2 = Toast.makeText(add_word.this, "Missing the translation and word",
+                    Toast toast2 = Toast.makeText(add_word.this, "Missing the key and the value",
                             Toast.LENGTH_SHORT);
                     toast2.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast2.show();
@@ -97,8 +97,8 @@ public class add_word extends AppCompatActivity {
                 else {
                     for (int i = 0; i < wordListFetched.size(); i++) { //on regarde si on a trad ou mot en double
                         if (wordListFetched.get(i).equals(wordName) || tradListFetched.get(i).equals(tradName)) {
-                            Toast toast = Toast.makeText(add_word.this, "The word or " +
-                                    "the translation already " +
+                            Toast toast = Toast.makeText(add_word.this, "The key or " +
+                                    "the value already " +
                                     "exists. If that is a synonym, please add a hint in " +
                                     "parenthesis in order to better recognize it.", Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -125,7 +125,7 @@ public class add_word extends AppCompatActivity {
                         int compteur = 5;
                         Word word = new Word(wordName, tradName, currentDate, compteur);
                         add(word);
-                        Toast.makeText(add_word.this, "New word added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(add_word.this, "New entry added", Toast.LENGTH_SHORT).show();
                         databaseReference.child(previousLang).child(String.valueOf(wordListFetched.size())).setValue(word);
                         wordIndex += 1;
                         setHintAndText(wordEditText, traductionEditText);
@@ -146,9 +146,9 @@ public class add_word extends AppCompatActivity {
     }
     public void setHintAndText(EditText et1, EditText et2){
         et1.setText("");
-        et1.setHint(previousLang);
+        et1.setHint("Key");//et1.setHint(previousLang);
         et2.setText("");
-        et2.setHint("Corresponding translation...");
+        et2.setHint("Corresponding value...");
     }
 
     public void newAndAdd(Word word){

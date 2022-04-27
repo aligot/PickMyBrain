@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        this.setTitle("Themes");
+        this.setTitle("Topics");
         listView = findViewById(R.id.listView);
         language_list = new ArrayList<>();
         btnAddLang = findViewById(R.id.fab);

@@ -17,6 +17,8 @@ public class inspect extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setTitle("Inspect");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inspect);
         textViewDate = findViewById(R.id.inspectDate);
@@ -31,8 +33,8 @@ public class inspect extends AppCompatActivity {
         listCounter = getIntent().getStringArrayListExtra("listCounter");
         position = getIntent().getIntExtra("indexW",0);
         textViewWord.setText(previousLang+": "+ wordListFetched.get(position));
-        textViewTrad.setText("Translation: "+tradListFetched.get(position));
-        textViewDate.setText("Word added the: \n"+dateListFetched.get(position));
+        textViewTrad.setText("Value: "+tradListFetched.get(position));
+        textViewDate.setText("Element added: \n"+dateListFetched.get(position));
         if(Integer.parseInt(listCounter.get(position))==5){
             scoreToDisplay = 1;
             textViewScore.setText("Knowledge level: \n"+scoreToDisplay +"/5");

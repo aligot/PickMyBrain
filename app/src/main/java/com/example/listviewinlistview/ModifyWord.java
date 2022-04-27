@@ -42,29 +42,32 @@ public class ModifyWord extends AppCompatActivity {
 
         wordEditText.setText(wordListFetched.get(position));
         traductionEditText.setText(tradListFetched.get(position));
-        this.setTitle("Modify the word: "+  wordListFetched.get(position));
+        this.setTitle("Modify the element: "+  wordListFetched.get(position));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages");
         btnModify.setOnClickListener(view -> {
             exists = false;
             wordName = wordEditText.getText().toString();
             tradName = traductionEditText.getText().toString();
             if(wordName.equals("") || tradName.equals("")){
-                Toast.makeText(ModifyWord.this, "Missing the translation and/or word",
+                Toast.makeText(ModifyWord.this, "Missing the key and/or the value",
                         Toast.LENGTH_SHORT).show();
             }else{
                 for (int i = 0; i<wordListFetched.size();i++){
                     if(wordListFetched.get(i).equals(wordName) && tradListFetched.get(i).equals(tradName)){
-                        Toast.makeText(ModifyWord.this, "This word already exists", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ModifyWord.this, "This element already exists", Toast.LENGTH_SHORT).show();
+                        exists = true;
+                        break;
+                    }else if(wordListFetched.get(i).equals(wordName) || tradListFetched.get(i).equals(tradName)){
+                        Toast.makeText(ModifyWord.this, "The key or the value already exists", Toast.LENGTH_SHORT).show();
                         exists = true;
                         break;
                     }
                 }
-                System.out.println("exists= "+ exists);
                 if(!exists) {
                     compteur = 5; //par defaut si on change le mot, on remet son compteur a 5
                     Word word = new Word(wordName, tradName, listDate.get(position), compteur);
                     modify(wordName,tradName,compteur);
-                    Toast.makeText(ModifyWord.this, "Word has been modified", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ModifyWord.this, "Element has been modified", Toast.LENGTH_SHORT).show();
                     databaseReference.child(previousLang).child(String.valueOf(position+1)).setValue(word);
                     nextIntent();
                 }
