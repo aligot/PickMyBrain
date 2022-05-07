@@ -59,7 +59,8 @@ public class itemfetch extends AppCompatActivity {
 
         if (wordListFetched != null) {
             for (int i = 0; i < wordListFetched.size(); i++) {
-                Word word = new Word(wordListFetched.get(i), tradListFetched.get(i), listDate.get(i),Integer.parseInt(listCounter.get(i)));
+                Word word = new Word(wordListFetched.get(i), tradListFetched.get(i),
+                        listDate.get(i), Integer.parseInt(listCounter.get(i)));
                 arrayOfWords.add(i, word);
                 // Construct the data source
                 // Create the adapter to convert the array to views
@@ -85,21 +86,26 @@ public class itemfetch extends AppCompatActivity {
 
         btnRevisions.setOnClickListener(view -> {
             if(wordListFetched.size()!=0){
-                MediaPlayer ring= MediaPlayer.create(getApplicationContext(),R.raw.revision);
+                MediaPlayer ring= MediaPlayer.create(getApplicationContext(),
+                        R.raw.revision);
                 ring.start();
                 Intent intentC = new Intent(itemfetch.this, Revision.class);
                 if (previousLang == null) {
                     intentC.putExtra("language", myLanguageClicked);
                 } else intentC.putExtra("language", previousLang);
                 intentC.putExtra("myImage", myImage);
-                intentC.putStringArrayListExtra("wordListRevision", (ArrayList<String>) wordListFetched);
-                intentC.putStringArrayListExtra("tradListRevision", (ArrayList<String>) tradListFetched);
-                intentC.putStringArrayListExtra("listCounter", (ArrayList<String>) listCounter);
+                intentC.putStringArrayListExtra("wordListRevision",
+                        (ArrayList<String>) wordListFetched);
+                intentC.putStringArrayListExtra("tradListRevision",
+                        (ArrayList<String>) tradListFetched);
+                intentC.putStringArrayListExtra("listCounter",
+                        (ArrayList<String>) listCounter);
                 intentC.putStringArrayListExtra("listDate", (ArrayList<String>) listDate);
                 intentC.putExtra("indexW", wordIndex);
                 startActivity(intentC);
             }else{
-                Toast.makeText(this, "1st add some entries for Topic Quizz",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "1st add some entries for Topic Quizz",
+                        Toast.LENGTH_SHORT).show();
             }
 
         });

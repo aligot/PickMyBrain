@@ -79,7 +79,6 @@ public class HomeActivity extends AppCompatActivity {
                                 word_list.add(word.getMot());
                                 trad_list.add(word.getTraduction());
                                 count_list.add("word.getDateAdded() vaut= "+String.valueOf(word.getCompteur()));
-                                System.out.println(word.getDateAdded());
                                 date_list.add(word.getDateAdded());
                                 itemlistWord.add(word);
                                 wordIndex = itemlistWord.indexOf(word)+1;

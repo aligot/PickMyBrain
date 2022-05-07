@@ -58,13 +58,13 @@ public class add_word extends AppCompatActivity {
             String tradName = traductionEditText.getText().toString().trim();
             Calendar calendar = Calendar.getInstance();
             String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
-            if(wordIndex == 0){ // cas ou il ya encore 0 mots dans la langue qu'on cree
+            if(wordIndex == 0){ // cas ou il ya encore 0 elements dans le theme qu'on cree
                 if(wordName.equals("") && tradName.equals("")){ //
                     Toast.makeText(add_word.this, "Missing the key and the value",
                         Toast.LENGTH_SHORT).show();
                 }
                 else if(wordName.equals("") || tradName.equals("")){ //
-                    Toast toast4 = Toast.makeText(add_word.this, "Missing the key and the value",
+                    Toast toast4 = Toast.makeText(add_word.this, "Missing the key or the value",
                             Toast.LENGTH_SHORT);
                     toast4.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast4.show();
@@ -80,9 +80,9 @@ public class add_word extends AppCompatActivity {
                     toast1.show();
                     nextIntent();
                 }
-            }else{
+            }else{ // cas ou il ya deja des elements dans la
                 if(wordName.equals("") || tradName.equals("")){
-                    Toast toast3 = Toast.makeText(add_word.this, "Missing the key and the value",
+                    Toast toast3 = Toast.makeText(add_word.this, "Missing the key or the value",
                             Toast.LENGTH_SHORT);
                     toast3.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast3.show();
