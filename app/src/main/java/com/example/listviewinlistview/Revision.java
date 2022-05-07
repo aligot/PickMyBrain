@@ -55,34 +55,45 @@ public class Revision extends AppCompatActivity {
         listDate = getIntent().getStringArrayListExtra("listDate");
         wordIndex = getIntent().getIntExtra("indexW",0);
         score = 0;
+
         Toast toast3 = Toast.makeText(Revision.this,
                 "5 element Topic Quizz begins !", Toast.LENGTH_SHORT);
         toast3.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
         View toastView1 = toast3.getView();
         toastView1.setBackgroundResource(R.drawable.custom_background_4);
         toast3.show();
+
+
+
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Languages").child(lang);
         this.setTitle(lang+"Topic Quizz");
         Random rd = new Random();
         boolean bool = rd.nextBoolean();//bool généré pour pour l'apparition du 1er mot de la rev
 
         System.out.println("je fais la PREMIERE REVISION");
+
+        //necessaire de mettre un if ici?
         if (revisionFaite) {
             if(bool){ revisionAlgoWord(upperbound);
             setHintTranslation(editText);}//bool=true, on génere un mot et faut trouver trad
             else{ revisionAlgoTrad(upperbound);
             setHintLanguage(editText);} //inversement si bool = false
         }
+
         btnValidate.setOnClickListener(view -> {
             Random rd1 = new Random();
             boolean bool1 = rd1.nextBoolean(); //on genere un bool
             cnt = Integer.parseInt(listcounter.get(counterLocal));
+
             if(bool2 && premierMotATraduire){
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
                 }
                 traduction = editText.getText().toString().trim();
-                premierMotATraduire = true;
+                premierMotATraduire = true; //si on est rentré dans le if avec bool2 && premierMotATraduire,
+                // c'est que ce dernier etait true, donc est-ce qu'il faut vrmt le remettre a true?
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
                     if (cnt > 1 && cnt < 6) {
                         decrement();
@@ -92,8 +103,7 @@ public class Revision extends AppCompatActivity {
                         score += 1;
                         toastCorrect();
                     }
-                }
-                else { //si traduction donnée est fausse
+                } else { //si traduction donnée est fausse
                     if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
                         increment(tradListForRevision.
                                 get(wordListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
@@ -111,6 +121,9 @@ public class Revision extends AppCompatActivity {
                         }
                 }setHintLanguage(editText);
             }
+
+
+
             else if (!bool2 && premierMotATraduire){
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
@@ -127,6 +140,7 @@ public class Revision extends AppCompatActivity {
                         toastCorrect();
                     }
                 }
+
                 else { //si mot donné est faux
                     if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
                         increment(wordListForRevision.
@@ -144,8 +158,10 @@ public class Revision extends AppCompatActivity {
                     }
                 }setHintTranslation(editText);
             }
+
             else if(bool){ //faut la trad
-                // mtn on veut traiter le 1er mot qui est apparu
+                // mtn on veut traiter le 1er mot qui est apparu i.e.
+                // c'est pour dire que c'est le 1er mot
                 traduction = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
@@ -173,7 +189,9 @@ public class Revision extends AppCompatActivity {
                         toast.show();
                     }
                 }setHintLanguage(editText);
-            } else{ //bool = faux: on veut mot
+            }
+
+            else{ //bool = faux: on veut mot
                 mot = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if(mot.equals(wordListForRevision.get(counterLocal))){ //si le mot donné est bon
@@ -202,25 +220,32 @@ public class Revision extends AppCompatActivity {
                     }
                 }
             }
+
+            //pas sur de savoir pq incrementer counterLocal puisque je suis
+            //pas la liste telle quelle mais je prends un élément random
+            //a la limité cntTest c'est ok puisqu'il doit augmenter
             if (counterLocal < listcounter.size()) { //counterLocal
                 // c'est l'index i.e. c'est ce qui permet de savoir a quel mot on est dans la liste
-                //cntTest c'est pour savoir a cmb de mots on est dans le test
+                //cntTest c'est pour savoir cmb de mots on a fait dans le test
                 counterLocal += 1;
                 cntTest += 1;
             }
 
-            if (cntTest < 5) { //si on s'est teste sur moins de 5 mots
+
+
+            if (cntTest < 5) { //si on s'est teste sur moins de 5 mots, i.e. on refait un test
                 upperbound = 0;
                 //on genere un bool2 pour l'apparition d'un nouveau mot
                 Random rd2 = new Random();
                 bool2 = rd2.nextBoolean();//donc mtn dans nos conditions ligne 79, il nous faut checker
                 //bool2 et plus bool. sauf que je dois quand meme checker bool
-                if(bool2){
-                    revisionAlgoWord(upperbound);
+                if(bool2){ //aléatoirement
+                    revisionAlgoWord(upperbound); //on regenere un mot
                     setHintTranslation(editText);}
                 else {
-                    revisionAlgoTrad(upperbound);
+                    revisionAlgoTrad(upperbound); //soit on regenere une trad
                     setHintLanguage(editText);}
+
             } else { //si oui, on arrete le test et on donne le score
                 if (score<2){
                     score(R.drawable.custom_background);
@@ -241,12 +266,15 @@ public class Revision extends AppCompatActivity {
         });
     }
 
-    public void revisionAlgoTrad(int upperbound) {
+    public void revisionAlgoTrad(int upperbound) {//algorithme appelé qui propose une value avec une
+        // certaine probabilité selon les scores de chaque element (élevée quand le score est bas
+        // et basse quand il est haut) et demande la key correspondante
         Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding key", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
         for (int i = 0; i < listcounter.size(); i++) {
-            upperbound += Integer.parseInt(listcounter.get(i));
+            upperbound += Integer.parseInt(listcounter.get(i)); //create an upperbound=sum of score
+            //of each element
         }
         upperbound+=1;
         int min = 1;
@@ -263,10 +291,13 @@ public class Revision extends AppCompatActivity {
         }
     }
 
-    public void revisionAlgoWord(int upperbound) {
+    public void revisionAlgoWord(int upperbound) { //algorithme appelé qui propose une key avec une
+        // certaine probabilité selon les scores de chaque element (élevée quand le score est bas
+        // et basse quand il est haut) et demande la value correspondante
         Toast toast= Toast.makeText(getApplicationContext(), "Now give the corresponding value", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0,0 );
         toast.show();
+
         for (int i = 0; i < listcounter.size(); i++) {
             upperbound += Integer.parseInt(listcounter.get(i));
         }
@@ -284,25 +315,32 @@ public class Revision extends AppCompatActivity {
             }
         }
     }
-
-    public void decrement() {
+//rappel:
+// cnt cest le compteur associe a chaque mot et en effet ligne 82 on définit
+// cnt = Integer.parseInt(listcounter.get(counterLocal));
+//    //counterlocal c'est l'index i.e. c'est ce qui permet de savoir a quel mot on est dans la liste
+    //mais du coup en faisant cnt -=1 et x-=1 je diminue pas 2 fois le listcounter.get(counterLocal)
+    //score =
+    public void decrement() { //fct qui defini ce qu'il se passe lorsqu'on a une bonne réponse
         cnt -= 1;
         score += 1;
-        int x = Integer.parseInt(listcounter.get(counterLocal));
+        int x = Integer.parseInt(listcounter.get(counterLocal)); //on converti le score du mot en int
         x = x-1;
         listcounter.set(counterLocal, String.valueOf(x));
         databaseReference.child(String.valueOf(counterLocal + 1)).child("compteur").setValue(cnt);
         toastCorrect();
     }
 
-    public void increment(String str) {
+    public void increment(String str) { // fct qui defini ce qu'il se passe lorsqu'on fait une erreur
         cnt += 1;
         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
         incorrect.start();
+
         int x = Integer.parseInt(listcounter.get(counterLocal));
         x=x+1;
         listcounter.set(counterLocal, String.valueOf(x));
         databaseReference.child(String.valueOf(counterLocal + 1)).child("compteur").setValue(cnt);
+
         Toast toast= Toast.makeText(getApplicationContext(),
                 "Wrong value.\nIt was " + str, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -325,7 +363,7 @@ public class Revision extends AppCompatActivity {
         toastCountDown.start();
     }
 
-    public void score(Object obj ){
+    public void score(Object obj ){ //enonce le score quand quiz fini
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Topic Quizz is finished!\nTQ Score : " + score + "/5", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -334,7 +372,7 @@ public class Revision extends AppCompatActivity {
         toast.show();
     }
 
-    public void toastCorrect(){
+    public void toastCorrect(){ //toast+musique lorsque réponse correcte
         MediaPlayer success= MediaPlayer.create(Revision.this,R.raw.success);
         success.start();
         Toast toast= Toast.makeText(getApplicationContext(), "Correct !", Toast.LENGTH_SHORT);
@@ -359,7 +397,7 @@ public class Revision extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { //defini ce que fait l'app quand on click sur btn retour du tel
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle("Exit");
@@ -380,7 +418,7 @@ public class Revision extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
+    //remplace les entries par ce qu'il faut
     public void setHintTranslation(EditText et1) {
         et1.setText("");
         et1.setHint("Value");

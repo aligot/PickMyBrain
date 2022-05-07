@@ -23,6 +23,7 @@ public class add_theme extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_theme);
         this.setTitle("Add a new Topic");
+
         editText = findViewById(R.id.editText);
         button = findViewById(R.id.btn);
 

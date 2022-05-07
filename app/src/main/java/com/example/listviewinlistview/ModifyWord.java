@@ -78,9 +78,6 @@ public class ModifyWord extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         listCounter = getIntent().getStringArrayListExtra("listCounter");
-        for (int i=0; i<listCounter.size();i++){
-            System.out.println(listCounter.get(i));
-        }
         nextIntent();
     }
 
