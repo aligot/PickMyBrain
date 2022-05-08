@@ -80,7 +80,8 @@ public class HomeActivity extends AppCompatActivity {
                                 trad_list.add(word.getTraduction());
                                 count_list.add("word.getDateAdded() vaut= "+String.valueOf(word.getCompteur()));
                                 date_list.add(word.getDateAdded());
-                                itemlistWord.add(word);
+                                itemlistWord.add(word); // on a def une liste d'objet mots
+                                // qui ont chacun leurs attributs
                                 wordIndex = itemlistWord.indexOf(word)+1;
                             }
                             break;
@@ -92,9 +93,9 @@ public class HomeActivity extends AppCompatActivity {
                         finalDateList.add(word.getDateAdded());
                         finalCountList.add(String.valueOf(word.getCompteur()));
                     }
-                    passToIntent(intent1);
+                    passToIntent(intent1); //envoie les infos des final lists a l'acti suivante
                     startActivity(intent1);
-                    finalWordList.clear();
+                    finalWordList.clear(); //on vide les listes
                     finalTradList.clear();
                     finalCountList.clear();
                     finalDateList.clear();

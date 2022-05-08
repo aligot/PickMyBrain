@@ -75,6 +75,7 @@ public class Revision extends AppCompatActivity {
         System.out.println("je fais la PREMIERE REVISION");
 
         //necessaire de mettre un if ici?
+
         if (revisionFaite) {
             if(bool){ revisionAlgoWord(upperbound);
             setHintTranslation(editText);}//bool=true, on génere un mot et faut trouver trad
@@ -86,8 +87,11 @@ public class Revision extends AppCompatActivity {
             Random rd1 = new Random();
             boolean bool1 = rd1.nextBoolean(); //on genere un bool
             cnt = Integer.parseInt(listcounter.get(counterLocal));
-
-            if(bool2 && premierMotATraduire){
+            //quand dans le if ya premierMotATraduire, ça veut dire qu'on regarde si on est au 1er element testé
+            //du topic quizz ou si on est aux suivants.
+            //y'a surement bcp plus simple d'écriture. Genre utiliser le cntTest plutot que ce boolean
+            if(bool2 && premierMotATraduire){ //donc si cette condition est vraie, c'est qu'on est
+                //plus au premier mot du test et qu'on va devoir régénérer un mot
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
                 }
@@ -122,16 +126,16 @@ public class Revision extends AppCompatActivity {
                 }setHintLanguage(editText);
             }
 
-
-
-            else if (!bool2 && premierMotATraduire){
+            else if (!bool2 && premierMotATraduire){// si cette condition est vraie, c'est qu'on est
+                //plus au premier mot du test et qu'on va devoir régénérer une trad
                 if(counterLocal==wordListForRevision.size()){
                     counterLocal-=1;
                 }
                 mot = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if(mot.equals(wordListForRevision.get(counterLocal))){//si le mot donné est bon
-                    if (cnt > 1 && cnt < 6) { //si le compteur du mot est compris entre 1 et 6 non inclu
+
+                    if (cnt > 1 && cnt < 6) { //si le compteur/score du mot est compris entre 1 et 6 non inclu
                         //et qu'on a le bon mot: alors on peut le décrémenter.
                         decrement();
                     }
@@ -140,12 +144,12 @@ public class Revision extends AppCompatActivity {
                         toastCorrect();
                     }
                 }
-
                 else { //si mot donné est faux
-                    if (cnt > 0 && cnt < 5) { //et que le compteur du mot est entre 0 et 5
+
+                    if (cnt > 0 && cnt < 5) { //et que le compteur/score du mot est entre 0 et 5
                         increment(wordListForRevision.
                                 get(tradListForRevision.indexOf(textWord.getText().toString()))); //alors on incrémente
-                    } else if (cnt == 5) {
+                    } else if (cnt == 5) { //
                         MediaPlayer incorrect= MediaPlayer.create(Revision.this,R.raw.incorrect);
                         incorrect.start();
                         Toast toast= Toast.makeText(getApplicationContext(),
@@ -160,8 +164,9 @@ public class Revision extends AppCompatActivity {
             }
 
             else if(bool){ //faut la trad
-                // mtn on veut traiter le 1er mot qui est apparu i.e.
-                // c'est pour dire que c'est le 1er mot
+                //si ça c'est vrai c'est qu'on est au premier element et qu'on génère un mot
+                //(cf le 1er test avant le Listener sur btnValidate)
+
                 traduction = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if (traduction.equals(tradListForRevision.get(counterLocal))) {
@@ -191,7 +196,9 @@ public class Revision extends AppCompatActivity {
                 }setHintLanguage(editText);
             }
 
-            else{ //bool = faux: on veut mot
+            else{ //faut le mot
+                //si ça c'est vrai c'est qu'on est au premier element et qu'on génère une trad
+                //(cf le 1er test avant le Listener sur btnValidate)
                 mot = editText.getText().toString().trim();
                 premierMotATraduire = true;
                 if(mot.equals(wordListForRevision.get(counterLocal))){ //si le mot donné est bon
@@ -223,7 +230,10 @@ public class Revision extends AppCompatActivity {
 
             //pas sur de savoir pq incrementer counterLocal puisque je suis
             //pas la liste telle quelle mais je prends un élément random
-            //a la limité cntTest c'est ok puisqu'il doit augmenter
+            //a la limité cntTest c'est ok puisqu'il doit augmenter.
+            //en vrai logique d'incrementer counterLocal puisque tant qu'il augmente mais qu'il est
+            //< listcounter.size() alors alors on continue d'incrémenter cntTest
+            //mais c'est bizarrement fait, on pourrait faire un while global cntTest < 5 p.ex
             if (counterLocal < listcounter.size()) { //counterLocal
                 // c'est l'index i.e. c'est ce qui permet de savoir a quel mot on est dans la liste
                 //cntTest c'est pour savoir cmb de mots on a fait dans le test
