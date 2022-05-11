@@ -1,4 +1,4 @@
-package com.example.listviewinlistview;
+package com.example.pickmybrain;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.listviewinlistview"
+        applicationId "com.example.pickmybrain"
         minSdk 21
         targetSdk 32
         versionCode 1

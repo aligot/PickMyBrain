@@ -1,4 +1,4 @@
-package com.example.listviewinlistview;
+package com.example.pickmybrain;
 
 public class Word {
     String mot, traduction, dateAdded;

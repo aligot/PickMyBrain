@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.listviewinlistview">
+    package="com.example.pickmybrain">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".inspect"
+            android:name="com.example.pickmybrain.inspect"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -21,7 +21,7 @@
         </activity>
         
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.pickmybrain.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -31,7 +31,7 @@
         </activity>
 
         <activity
-            android:name=".ModifyWord"
+            android:name="com.example.pickmybrain.ModifyWord"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add_word"
+            android:name="com.example.pickmybrain.add_word"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add_theme"
+            android:name="com.example.pickmybrain.add_theme"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name="com.example.pickmybrain.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -71,7 +71,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".itemfetch"
+            android:name="com.example.pickmybrain.itemfetch"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -81,7 +81,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Revision"
+            android:name="com.example.pickmybrain.Revision"
             android:exported="false"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>

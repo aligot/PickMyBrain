@@ -1,4 +1,4 @@
-package com.example.listviewinlistview;
+package com.example.pickmybrain;
 
 import android.content.Context;
 import android.view.LayoutInflater;
