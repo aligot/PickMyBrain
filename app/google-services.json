@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "581197373829",
-    "firebase_url": "https://listviewinlistview-f7abf-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "listviewinlistview-f7abf",
-    "storage_bucket": "listviewinlistview-f7abf.appspot.com"
+    "project_number": "189318535919",
+    "firebase_url": "https://pickmybrain-9074c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pickmybrain-9074c",
+    "storage_bucket": "pickmybrain-9074c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:581197373829:android:c5a58bb9a0e8735c00a4ec",
+        "mobilesdk_app_id": "1:189318535919:android:a9e182fb6b50e88aba991a",
         "android_client_info": {
           "package_name": "com.example.listviewinlistview"
         }
       },
       "oauth_client": [
         {
-          "client_id": "581197373829-8j7nchch4fu2ri1rl1qah3fqdcr7i3ch.apps.googleusercontent.com",
+          "client_id": "189318535919-mevgrcq2dt537pa7rj5mp4jbh2keqebe.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_-Jum3112jPVTtLCB4JObDEpIUvyQblI"
+          "current_key": "AIzaSyBnz0Ln4EiSlRf62MG5-pQqJNzwPLmXMOM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "581197373829-8j7nchch4fu2ri1rl1qah3fqdcr7i3ch.apps.googleusercontent.com",
+              "client_id": "189318535919-mevgrcq2dt537pa7rj5mp4jbh2keqebe.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
